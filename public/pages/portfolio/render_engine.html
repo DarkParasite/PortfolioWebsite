@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="/src/css/output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <title>3D Render Engine</title>
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-black text-white p-3">
+    <div class="mx-60">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold hover:text-blue-400"><a href="/index.html">Rishi Khanna</a></h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a class="hover:text-blue-400" href="/index.html">Portfolio</a></li>
+                    <li><a class="hover:text-blue-400" href="/pages/resume.html">Resume</a></li>
+                    <li><a class="hover:text-blue-400" href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Main Body -->
+<div class="flex flex-col items-center w-full h-full bg-gray-100 min-h-screen">
+
+    <!-- Main Box -->
+    <div class="bg-white p-6 rounded-lg shadow-xl items-center mt-5 w-3/4">
+
+        <!-- Title -->
+        <h1 class="text-2xl font-bold">3D Render Engine</h1>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-1 mb-2.5 mt-2">
+            <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">C++</span>
+            <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">GLSL</span>
+            <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">OpenGL</span>
+            <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">SDL2</span>
+        </div>
+
+        <!-- Time Period -->
+        <div>
+            <p class="text-gray-600 text-sm mb-2"><i class="fa-regular fa-clock"></i> July 2023</p>
+        </div>
+
+        <!-- Description -->
+        <div class="my-5">
+            <p class="text-gray-800 text-base">
+                Developed a 3D Render Engine utilizing C++, OpenGL, SDL2, Assimp and many other libraries. This project
+                implements the
+                <span class="font-semibold text-blue-500">Phong Lighting Model</span> with Directional Light,
+                Omnidirectional Light, Point Light, SpotLight and Ambient Light.
+            </p>
+        </div>
+
+        <!-- Showcase Video iframe -->
+        <div class="flex flex-col w-full items-center">
+
+            <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+                picture-in-picture; web-share" allowfullscreen frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin"
+                    src="https://www.youtube.com/embed/MFr-EedVeQo?si=sn45n3Els-2L3IF5" title="YouTube video player" width="560">
+            </iframe>
+
+        </div>
+
+        <!-- Implementations List -->
+     <div class="flex flex-col mx-28 my-5">
+
+         <!-- Card Title Box -->
+         <div class="bg-black rounded-md items-center my-5 px-2 py-1 w-full">
+             <h2 class="text-xl text-white text-center font-medium">Things I Implemented</h2>
+         </div>
+
+         <div class="grid grid-cols-2 gap-1">
+             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                 <p>SDL2 Window and Input</p>
+             </div>
+
+             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                 <p>Translation, Rotation, Scale</p>
+             </div>
+
+             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                 <p>Camera Movement</p>
+             </div>
+
+             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                 <p>Perspective Projection</p>
+             </div>
+
+             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                 <p>Phong Lighting Model</p>
+             </div>
+
+             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                 <p>Directional and Omnidirectional Lights</p>
+             </div>
+
+             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                 <p>Pointlight and Spotlight</p>
+             </div>
+
+             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                 <p>Importing Custom 3D Models</p>
+             </div>
+
+
+         </div>
+     </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+<footer class="bg-gray-800 text-white p-4 mt-auto w-full">
+    <div class="container mx-auto text-center">
+        <p class="text-sm">© 2024 Rishi Khanna. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
