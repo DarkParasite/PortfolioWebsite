@@ -6,6 +6,10 @@
     <link href="/src/css/output.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+    <!-- Highlight.js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
+          rel="stylesheet">
+
     <title>3D Render Engine</title>
 </head>
 <body>
@@ -20,7 +24,8 @@
                     <li><a class="hover:text-blue-400" href="/index.html">Portfolio</a></li>
                     <li><a class="hover:text-blue-400" href="/pages/resume.html">Resume</a></li>
                     <li><a class="hover:text-blue-400" href="/pages/contact.html">Contact</a></li>
-                    <li><a class="hover:text-blue-400" href="https://darkparasite.github.io/GameDevCodex/" target="_blank" rel="noopener noreferrer">GameDevCodex </a></li>
+                    <li><a class="hover:text-blue-400" href="https://darkparasite.github.io/GameDevCodex/"
+                           rel="noopener noreferrer" target="_blank">GameDevCodex </a></li>
 
                 </ul>
             </nav>
@@ -32,10 +37,11 @@
 <div class="flex flex-col items-center w-full h-full bg-gray-100 min-h-screen">
 
     <!-- Main Box -->
-    <div class="bg-white p-6 rounded-lg shadow-xl items-center mt-5 w-3/4">
+    <div class="bg-white p-6 rounded-lg shadow-xl items-center my-5 w-3/4">
 
         <!-- Title -->
-        <h1 class="text-2xl font-bold">3D Render Engine</h1>
+        <h1 class="text-2xl font-bold mb-1">3D Render Engine</h1>
+        <hr class="border-y border-gray-400 mb-2">
 
         <!-- Tags -->
         <div class="flex flex-wrap gap-1 mb-2.5 mt-2">
@@ -50,77 +56,405 @@
             <p class="text-gray-600 text-sm mb-2"><i class="fa-regular fa-clock"></i> July 2023</p>
         </div>
 
-        <!-- Description -->
-        <div class="my-5">
+        <!-- Description and Showcase -->
+        <h3 class="font-semibold text-xl mt-5 ">Description and Showcase</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+        <div class="mb-5 mt-2">
             <p class="text-gray-800 text-base">
                 Developed a 3D Render Engine utilizing C++, OpenGL, SDL2, Assimp and many other libraries. This project
-                implements the <span class="font-semibold text-blue-500">Phong Lighting Model</span> with Directional Light,
+                implements the <span class="font-semibold text-blue-500">Phong Lighting Model</span> with Directional
+                Light,
                 Omnidirectional Light, Point Light, SpotLight and Ambient Light. <br>I was curious how graphics works,
                 so first I learned Computer Graphics on YouTube from
                 <a class="font-semibold text-blue-800 hover:text-blue-400 underline"
-                   href="https://www.youtube.com/@cem_yuksel" target="_blank" rel="noopener noreferrer">Cem Yuksel</a>
-                a top Graphics Professor from the University of Utah. Then I started working on this 3D Render Engine.</p>
+                   href="https://www.youtube.com/@cem_yuksel" rel="noopener noreferrer" target="_blank">Cem Yuksel</a>
+                a top Graphics Professor from the University of Utah. Then I started working on this 3D Render Engine.
+            </p>
         </div>
 
         <!-- Showcase Video iframe -->
         <div class="flex flex-col w-full items-center overflow-hidden">
 
-            <iframe class="w-3/4 h-auto" style="aspect-ratio: 16 / 9;"
-                    src="https://www.youtube.com/embed/rHnem9oalLM?si=iFzgZYI1DPfgr4ei" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    class="w-3/4 h-auto" frameborder="0"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    src="https://www.youtube.com/embed/rHnem9oalLM?si=iFzgZYI1DPfgr4ei"
+                    style="aspect-ratio: 16 / 9;" title="YouTube video player">
             </iframe>
         </div>
 
-        <!-- Implementations List -->
+        <!-- Things Implemented Title -->
+        <h1 class="text-2xl font-bold mb-1 mt-5">Things Implemented</h1>
+        <hr class="border-y border-gray-400">
 
-        <div class="flex flex-col mx-28 my-5">
-         <!-- Card Title Box -->
-         <div class="bg-black rounded-md items-center my-5 px-2 py-1 w-full">
-             <h2 class="text-xl text-white text-center font-medium">Things Implemented</h2>
-         </div>
+        <!-- Things Implemented List -->
+        <div class="flex flex-col mx-28 my-8">
+            <div class="grid grid-cols-2 gap-1">
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>SDL2 Window and Input</p>
+                </div>
 
-         <div class="grid grid-cols-2 gap-1">
-             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                 <p>SDL2 Window and Input</p>
-             </div>
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>Translation, Rotation, Scale</p>
+                </div>
 
-             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                 <p>Translation, Rotation, Scale</p>
-             </div>
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>Camera Movement</p>
+                </div>
 
-             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                 <p>Camera Movement</p>
-             </div>
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>Perspective Projection</p>
+                </div>
 
-             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                 <p>Perspective Projection</p>
-             </div>
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>Phong Lighting Model</p>
+                </div>
 
-             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                 <p>Phong Lighting Model</p>
-             </div>
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>Directional and Omnidirectional Lights</p>
+                </div>
 
-             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                 <p>Directional and Omnidirectional Lights</p>
-             </div>
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>Pointlight and Spotlight</p>
+                </div>
 
-             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                 <p>Pointlight and Spotlight</p>
-             </div>
-
-             <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                 <p>Importing Custom 3D Models</p>
-             </div>
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>Importing Custom 3D Models</p>
+                </div>
 
 
-         </div>
-     </div>
+            </div>
+        </div>
 
+        <!-- Project Overview Title -->
+        <h1 class="text-2xl font-bold mb-1">Project Overview</h1>
+        <hr class="border-y border-gray-400 mb-2">
+
+        <!-- General Overview -->
+        <h3 class="font-semibold text-xl mt-5 ">General Overview</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+
+        <p>
+            I programmed a 3D rendering engine using OpenGL and SDL2 to gain a deeper understanding of how graphics work from a low-level perspective.
+            This project provided me with a comprehensive understanding of how the GPU renders a model on the screen through the process of rasterization.
+            I loved learning about vertex, fragment, and geometry shaders, the implementation of perspective projection, and other key concepts that are essential to the
+            functionality of a game engine.<br><br>
+
+            I have implemented the Phong lighting model, which is a simplified approximation of the more general rendering equation. The Phong lighting model
+            consists of three main components: ambient, diffuse, and specular lighting. I have implemented <span class="font-semibold">Perspective Projection</span> which
+            gives the 3D perspective look in video games, and we can move around the world. Based on the camera's location, every model in the scene will
+            move and the models on the screen will be rasterized to display the 3D world in the window.
+        </p>
+
+        <!-- Libraries Used -->
+        <h3 class="font-semibold text-xl mt-5 ">Libraries Used</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+        <p>These are the libraries I have used, but not limited to these</p>
+
+        <div class="mx-14 mt-2.5">
+            <ul class="list-disc">
+                <li>SDL2 (Window, input and other functions)</li>
+                <li>OpenGL (Graphics Rendering API)</li>
+                <li>glew</li>
+                <li>glm (Math library perfect for game engines)</li>
+                <li>Assimp (Models importing library)</li>
+            </ul>
+        </div>
+
+        <!-- Window -->
+        <h3 class="font-semibold text-xl mt-5 ">Window</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+
+        <p>
+            I was deciding between using <span class="font-semibold">glfw</span> and <span
+                class="font-semibold">SDL2</span>, and decided to stick with SDL2 since it has functions
+            for various things like input, audio, even a simple 2D rendering features along with Window. Setting up the
+            Window with SDL was pretty easy, it worked really great.
+            Inspecting the header files was enough to understand what each function does, everything was document
+            clearly. So I set up a basic window with SDL2. I still had some
+            issues with fullscreen at desktop native resolution, but I never got around it since I didn't want to spend
+            much time on the window alone. There were so many flags that
+            you could pass to the CreateWindow, it had fun testing out different flags. Here is a small snippet of it.
+        </p>
+
+        <!-- Code Snippet Title -->
+        <div class="flex flex-col mt-5 max-w-max">
+            <div class="bg-gray-600 p-1 rounded-t-lg">
+                <span class="text-sm ml-3 text-white font-semibold">MainWindow.cpp</span>
+            </div>
+
+<!-- This format is must, otherwise unwanted whitespaces will appear -->
+<pre><code class="language-cpp text-sm rounded-b-lg shadow-2xl max-w-max">int MainWindow::Initialize()
+{
+    // NOTE : SOME CODE HAS BEEN OMITTED
+    Window = SDL_CreateWindow("Editor", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+    SDL_GL_GetDrawableSize(Window, &BufferWidth, &BufferHeight);
+    GLContext = SDL_GL_CreateContext(Window);
+}</code></pre></div>
+
+        <!-- Input -->
+        <h3 class="font-semibold text-xl mt-5 ">Input</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+
+        <p>For a clean input handling in the engine, I followed these two</p>
+        <ul class="list-decimal mx-14 mt-2.5">
+            <li>Followed the <span class="font-semibold">Command Design Pattern</span></li>
+            <li>Decoupled the input into a separate component</li>
+        </ul>
+
+        <p class="mt-2.5">
+            We can bind any function to different inputs of input type like PRESSED and RELEASED. The
+            InputHandlingComponent will poll the keyboard and mouse states with SDL,
+            then updates the necessary axis values, and also does the callback to the functions that are bound
+            to different inputs.
+        </p>
+
+        <!-- Code Snippet Title -->
+        <div class="flex flex-col w-full max-w-max mt-5">
+            <div class="bg-gray-600 p-1 rounded-t-lg">
+                <span class="text-sm ml-3 text-white font-semibold">main.cpp</span>
+            </div>
+
+            <!-- This format is must, otherwise unwanted whitespaces will appear -->
+            <pre><code class="language-cpp text-sm rounded-b-lg shadow-2xl w-full">int MainWindow::Initialize() // Input callback functions
+void W_Pressed() { }
+void W_Released() { }
+
+// Binding Inputs
+InputHandling.BindInputAction(INP_KEYBOARD_W, INP_PRESSED, W_Pressed);
+InputHandling.BindInputAction(INP_KEYBOARD_W, INP_RELEASED, W_Released);
+</code></pre>
+        </div>
+
+        <!-- Meshes and Lights -->
+        <h3 class="font-semibold text-xl mt-5 ">Meshes and Lights</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+
+        <p>
+            Meshes and Lights can be created, and added to their respective scene array. I should have used some kind of class to represent the scene, but I stuck with just having
+            different shared pointer arrays for holding different entities in the scene, to reduce complexity.
+        </p>
+
+        <h3 class="font-bold text-lg mt-5 ">Meshes</h3>
+        <p>
+            Meshes can be created either by directly specifying out the vertices and UV values of the texture, or by importing with Assimp library. The logic for load model
+            was pretty hard, but I managed to do it. When we import a scene using Assimp, we need to recursively load all the nodes(parent-child attached meshes), and get the
+            vertex and material data from each of the mesh and then create the mesh. For direct creation using vertex data, we can directly call CreateMesh passing the vertices
+            and the UV values in the correct 1 dimensional array format.
+        </p>
+
+        <!-- Code Snippet Title -->
+        <div class="flex flex-col w-full max-w-max mt-5">
+            <div class="bg-gray-600 p-1 rounded-t-lg">
+                <span class="text-sm ml-3 text-white font-semibold">Meshes</span>
+            </div>
+
+            <!-- This format is must, otherwise unwanted whitespaces will appear -->
+<pre><code class="language-cpp text-sm rounded-b-lg shadow-2xl w-full">// Create Mesh function that constructs the mesh
+void Mesh::CreateMesh(GLfloat* Vertices, unsigned int* Indices, unsigned int VertexNum, unsigned int IndicesNum)
+{
+    MeshIndexCount = IndicesNum;
+
+    // Generating a VAO and then binding it
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+
+    glGenBuffers(1, &IBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices[0]) * IndicesNum, Indices, GL_STATIC_DRAW);
+
+    // PRETTY BIG FUNCTION, OMITTED THE REST
+    //...
+}
+
+// Load Model Logic - simplified and omitted
+void PrimitiveMesh::LoadModel(const std::string& FileName)
+{
+    Assimp::Importer Importer;
+    const aiScene* Scene = Importer.ReadFile(FileName, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_GenSmoothNormals | aiProcess_JoinIdenticalVertices);
+
+    // Call the Recursive function Load Node which loads all the nodes (Parent Child Tree)
+    // All the nodes and their respective mesh will be loaded
+    LoadNode(Scene->mRootNode, Scene);
+
+    // Load the Textures
+    LoadMaterials(Scene);
+}
+</code></pre>
+        </div>
+
+        <h3 class="font-bold text-lg  mt-5">Lights</h3>
+        <p>
+            There are different two types of light, each requiring their own shader for calculating shadows
+        </p>
+        <ul class="list-disc mx-14 mt-2.5">
+            <li>Directional Light</li>
+            <li>Omni-Directional Light (PointLight, SpotLight)</li>
+        </ul>
+        <p class="mt-2.5">
+            Each light is a class, and have some properties. These properties are used by the shaders to calculate the lighting, rendering the ShadowMap texture etc.
+            The properties include location, direction(for directional light), diffuse intensity, ambient intensity, diffuse color, ambient color, exponent, linear and constant
+            values, edge angle for the Phong Lighting model to control the specular, light spread etc. Below is the constructor of different light functions initializing its
+            properties which can be updated during runtime.
+        </p>
+
+        <!-- Code Snippet Title -->
+        <div class="flex flex-col w-full max-w-max mt-5">
+            <div class="bg-gray-600 p-1 rounded-t-lg">
+                <span class="text-sm ml-3 text-white font-semibold">Lights</span>
+            </div>
+
+<!-- This format is must, otherwise unwanted whitespaces will appear -->
+<pre><code class="language-cpp text-sm rounded-b-lg shadow-2xl w-full">// Direction Light
+DirectionalLight(GLsizei ShadowMapBufferWidth, GLsizei ShadowMapBufferHeight, GLfloat AmbientLightIntensity,
+    glm::vec3 AmbientColor, GLfloat DiffuseLightIntensity, glm::vec3 DiffuseColor, glm::vec3 LightDirection);
+
+// Point Light
+PointLight(GLsizei ShadowBufferWidth, GLsizei ShadowBufferHeight, glm::vec3 DiffuseColor, glm::vec3 AmbientColor, GLfloat AmbientLightIntensity,
+    GLfloat DiffuseLightIntensity, glm::vec3 LightLocation,  GLfloat ExponentValue, GLfloat LinearValue, GLfloat ConstantValue);
+
+// Spot Light
+SpotLight(GLfloat ShadowBufferWidth, GLfloat ShadowBufferHeight, glm::vec3 DiffuseColor, glm::vec3 AmbientColor, GLfloat AmbientLightIntensity,
+    GLfloat DiffuseLightIntensity, glm::vec3 LightLocation, glm::vec3 LightDirection, GLfloat ExponentValue, GLfloat LinearValue,
+    GLfloat ConstantValue, GLfloat EdgeAngle);
+</code></pre>
+        </div>
+
+        <!-- Game Loop -->
+        <h3 class="font-semibold text-xl mt-5 ">Shaders</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+
+        <p>There are totally 4 sets of shaders in the project, each for different purpose</p>
+        <ul class="list-decimal mx-14 mt-2.5">
+            <li>Main Shader [vertex,fragment]</li>
+            <li>Directional Shadow Map Shader [vertex,fragment]</li>
+            <li>Omni-Directional Shadow Map Shader [vertex,fragment,geometry]</li>
+            <li>Sky Box [vertex, fragment]</li>
+        </ul>
+
+        <h3 class="font-bold text-lg  mt-5">Main Shader</h3>
+        <p>
+            The vertex shader transforms vertex positions to clip space, computes positions in light space for shadows, and passes UV coordinates and
+            normals to the fragment shader. It adjusts normals using the inverse transpose of the model matrix and calculates world-space vertex positions for lighting.<br><br>
+
+            The fragment shader performs the lighting pass the scene, taking into account multiple light types, including directional,
+            point, and spotlights, along with detailed shadow mapping. It calculates the color of each fragment by blending ambient, diffuse, and specular lighting,
+            taking into account the effects of texture mapping and shadows. The shader leverages both directional and omnidirectional shadow mapping, ensuring that
+            shadows from all light types are accurately represented, with additional support for soft shadows using <span class="font-semibold">Percentage Closer Filtering (PCF)</span>
+            for smoother, more realistic shadow edges. It also handles light attenuation for point and spotlights, reducing the light's intensity over distance to mimic realistic
+            falloff. This shader is highly optimized for complex lighting scenarios, allowing for multiple dynamic lights to cast shadows and interact with surfaces in
+            a physically plausible way, making it ideal for sophisticated real-time rendering in 3D applications.
+        </p>
+
+        <!-- Code Snippet Title -->
+        <div class="flex flex-col w-full max-w-max mt-5">
+            <div class="bg-gray-600 p-1 rounded-t-lg">
+                <span class="text-sm ml-3 text-white font-semibold">Main Vertex and Fragment Shader</span>
+            </div>
+
+<!-- This format is must, otherwise unwanted whitespaces will appear -->
+<pre><code class="language-cpp text-sm rounded-b-lg shadow-2xl w-full">// Vertex shader
+void main()
+{
+    gl_Position = Projection * View * Model * vec4(pos, 1.f);
+    DirectionalLightSpacePosition = DirectionalLightTransform * Model * vec4(pos, 1.f);
+    TextCoord = TextUV;
+    VertexNormal = mat3(transpose(inverse(Model))) * InterpedVertexNormal;
+
+    FragmentPosition = (Model * vec4(pos, 1.f)).xyz;
+}
+
+// Fragment Shader
+void main()
+{
+    vec4 FinalColor = CalculateDirectionalLight() + CalculatePointLights() + CalculateSpotLights();
+
+    color = texture(Texture2D, TextCoord) * FinalColor;
+}
+</code></pre>
+        </div>
+
+        <h3 class="font-bold text-lg  mt-5">Other Shaders</h3><br>
+
+        <span class="font-semibold">Directional Shadow Map Shader</span>
+        - This vertex shader transforms vertex positions from model space to light space using the model and directional light transformation matrices.
+        It calculates the position of each vertex from the perspective of the light, preparing it for shadow mapping. <br><br>
+
+        <span class="font-semibold">Omni-Directional Shadow Map Shader</span>
+        - The shader code includes a vertex shader that transforms vertex positions from model space to clip space using the model matrix, a fragment shader
+        that calculates and normalizes the distance from the fragment to a light source for depth mapping, and a geometry shader that projects geometry onto all
+        six faces of a cubemap using different light matrices, emitting triangles for shadow mapping on each face of the cubemap. <br><br>
+
+        <span class="font-semibold">SkyBox Shader</span>
+        - The vertex shader transforms vertex positions from model space to clip space using the projection and view matrices, and passes the position as texture coordinates
+        to the fragment shader. The fragment shader samples and outputs the color from a cubemap texture using the provided texture coordinates, rendering a skybox effect.
+
+        <!-- Game Loop -->
+        <h3 class="font-semibold text-xl mt-5 ">Game Loop</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+
+        <p>The game loop is abstracted well and it does the following</p>
+        <ul class="list-decimal mx-14 mt-2.5">
+            <li>Calculate Delta Time</li>
+            <li>Handle and Update Input</li>
+            <li>Render Passes</li>
+            <li>Swap the buffer with the latest render</li>
+        </ul>
+
+        <p>
+            The render passes does most of the stuff, rendering every mesh and models with the lights which can be dynamic every loop, capturing and
+            updating the ShadowMaps, drawing the skybox etc.
+        </p>
+
+        <!-- Code Snippet Title -->
+        <div class="flex flex-col w-full max-w-max mt-5">
+            <div class="bg-gray-600 p-1 rounded-t-lg">
+                <span class="text-sm ml-3 text-white font-semibold">main.cpp</span>
+            </div>
+
+            <!-- This format is must, otherwise unwanted whitespaces will appear -->
+<pre><code class="language-cpp text-sm rounded-b-lg shadow-2xl w-full">while (bGameLoop)
+{
+    //Update the Delta Time
+    UpdateDeltaTime();
+
+    // Input
+    InputHandling.UpdateKeyboardStates(SDL_GetKeyboardState(NULL));
+    InputHandling.InputHandling(&bGameLoop);
+    MainCamera.CameraInput(InputHandling.GetKeyboardAxisValues(), InputHandling.GetMouseRelativeChange(), InputHandling.GetMouseStates(), DeltaTime);
+
+    /* [Render Passes] */
+    DirectionalShadowMapRenderPass(MainDirectionalLight);
+    for (size_t i = 0; i < PointLightCount; i++)
+    {
+        OmniDirectionalShadowMapRenderPass(PointLights[i]);
+    }
+    for (size_t i = 0; i < SpotLightCount; i++)
+    {
+        OmniDirectionalShadowMapRenderPass(SpotLights[i]);
+    }
+    RenderPass(MainDirectionalLight);
+
+    glUseProgram(0);
+    Window.SwapBuffers();
+}
+</code></pre>
+        </div>
+
+        <!-- Conclusion -->
+        <h1 class="text-2xl font-bold mb-1 mt-5">Conclusion</h1>
+        <hr class="border-y border-gray-400 mb-2">
+
+        I learned so much working on this project, only after learning about graphics from
+        <a class="font-semibold text-blue-800 hover:text-blue-400 underline"
+           href="https://www.youtube.com/@cem_yuksel" rel="noopener noreferrer" target="_blank">Cem Yuksel</a>
+        and writing this engine, I was effectively able to right shaders in
+        Unreal Engine with full understanding of what is happening. It gave me an understanding of so many things I was always curious about and I loved every minute of working on this
+        project. This project led me to get interested in learning more about game engine, I started reading the book "Game Engine Architecture" by Jason Gregory. It also made me
+        realize I need to learn more about design patters, low level optimization, project structuring, advanced abstraction, macros etc.
 
     </div>
-
 </div>
 
 <footer class="bg-black text-white p-4 mt-auto w-full">
@@ -128,6 +462,10 @@
         <p class="text-sm">© 2024 Rishi Khanna. All rights reserved.</p>
     </div>
 </footer>
+
+<!-- Hightlight.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 
 </body>
 </html>
