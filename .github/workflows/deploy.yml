@@ -13,9 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4  # Checkout the repository to access /public folder
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public  # The directory you want to deploy, automatically deployed to the root of the new gh-pages branch created
+          publish_dir: ./public  # The directory you want to deploy
           force_orphan: true  # Force deployment even if there are no detected changes
