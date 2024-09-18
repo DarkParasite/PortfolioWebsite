@@ -745,6 +745,15 @@ video {
   height: 100%;
 }
 
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1195,6 +1204,10 @@ video {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-auto {
+    height: auto;
   }
 
   .md\:w-3\/5 {

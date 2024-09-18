@@ -16,6 +16,10 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v4  # Checkout the repository to access /public folder
 
+      # Ensure the CNAME file is in the /public directory
+      - name: Ensure CNAME for custom domain
+        run: echo "rishikhanna.site" > ./public/CNAME  # Replace with your custom domain
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
