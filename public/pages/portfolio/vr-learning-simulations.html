@@ -7,7 +7,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script src="/src/javascript/scripts.js"></script>
 
-  <title>TPP Shooter Game</title>
+  <title>VR Learning Simulations</title>
 </head>
 <body>
 
@@ -35,19 +35,19 @@
   <div class="bg-white p-6 rounded-lg shadow-xl items-center mt-5 w-3/4">
 
     <!-- Title -->
-    <h1 class="text-2xl font-bold mb-1">TPP Shooter Game</h1>
+    <h1 class="text-2xl font-bold mb-1">VR Learning Simulations</h1>
     <hr class="border-y border-gray-400 mb-2">
 
     <!-- Tags -->
     <div class="flex flex-wrap gap-1 mb-2.5 mt-2">
-      <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">C++</span>
       <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+      <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">VR</span>
       <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
     </div>
 
     <!-- Time Period -->
     <div>
-      <p class="text-gray-600 text-sm mb-2"><i class="fa-regular fa-clock"></i> August 2022 - September 2022</p>
+      <p class="text-gray-600 text-sm mb-2"><i class="fa-regular fa-clock"></i> January 2024</p>
     </div>
 
     <!-- Description and Showcase -->
@@ -55,16 +55,25 @@
     <hr class="border-y border-gray-400 mb-2 mr-10">
     <div class="my-5">
       <p class="text-gray-800 text-base">
-          This is one of first proper project I worked on. I implemented the mechanics in the game following an Udemy course. This project is the one that made me get addicted
-          to Unreal Engine, since then I stopped playing video games(which I did too much), and started getting high making video games instead. I remember working on the project
-          all day continuously for a month.
+        This is a VR Learning Simulation Platform which has two playable levels. <br><br>
+
+        First is the <span class="font-semibold">Solar System Simulation</span>,
+        which very accurate simulates things like Rotation, Revolution, Planet Size (Diameters), relative distance of each heavenly body from each other etc.
+        Player can move between different platform, view information about the planet in their Hand Held 3D HUD, change simulation speed and experience the
+        3D planet simulation in VR. Custom <span class="font-semibold">shaders</span> have been written to accurately depict all directional lighting, Sun's surface
+        Earth's day and night cycle, Jupiter's moving gas atmosphere, Saturn's ring etc. <br><br>
+
+        Second project is the <span class="font-semibold">Human Anatomy Simulation</span>, an interactive experience where users can explore and engage with various human organs in
+        detail. Players can pick up organs, manipulate them by moving and scaling, and examine different areas closely. Each part of the organ is labeled
+        with 3D text, providing educational insights and helping users identify and learn about each specific region.
+
       </p>
     </div>
 
     <!-- Showcase Video iframe -->
     <div class="flex flex-col w-full items-center overflow-hidden">
       <iframe class="w-3/4 h-auto" style="aspect-ratio: 16 / 9;"
-              src="https://www.youtube.com/embed/8yRXsxSj-6k?si=qkmDfWULOUDrhSQY" title="YouTube video player"
+              src="https://www.youtube.com/embed/RRtWy9nIRUA?si=PybCa2ZV8EhDvtIw" title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -80,27 +89,35 @@
 
       <div class="grid grid-cols-2 gap-1">
         <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-          <p>Movement and Shooting Mechanics</p>
+          <p>Planet Rotation and Revolution</p>
         </div>
 
         <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-          <p>Animation Blueprint with a lot of states</p>
+          <p>Adjustable Simulation Speed</p>
         </div>
 
         <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-          <p>Weapon Rarity</p>
+          <p>Sun surface shader</p>
         </div>
 
         <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-          <p>Cool Pickup effect, similar to Fortnite</p>
+          <p>Earth day/night cycle shader</p>
         </div>
 
         <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-          <p>Very Basic AI</p>
+          <p>Jupiter's moving atmosphere shader</p>
         </div>
 
         <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-          <p>Basic Sounds and Effects</p>
+          <p>Interactable human organs</p>
+        </div>
+
+        <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+          <p>Move and Scale organs</p>
+        </div>
+
+        <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+          <p>3D labeled organ region/part</p>
         </div>
 
       </div>
