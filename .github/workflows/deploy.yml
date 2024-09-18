@@ -5,6 +5,9 @@ on:
     branches:
       - master  # Default branch of your repository
 
+permissions:
+  contents: write  # Explicitly grant write permissions
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
