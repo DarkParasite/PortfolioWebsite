@@ -16,7 +16,7 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v4  # Checkout the repository to access /public folder
 
-      # Ensure the CNAME file is in the /public directory
+      # Ensure the CNAME file is in the /public directory, this is for custom domain, if not done everytime we push we need to update the custom domain in Pages section.
       - name: Ensure CNAME for custom domain
         run: echo "rishikhanna.site" > ./public/CNAME  # Replace with your custom domain
 
