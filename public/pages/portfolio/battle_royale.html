@@ -89,7 +89,7 @@
 
         <!-- Time Period -->
         <div>
-            <p class="text-gray-600 text-sm mb-2"><i class="fa-regular fa-clock"></i> 2022</p>
+            <p class="text-gray-600 text-sm mb-2"><i class="fa-regular fa-clock"></i> April 2024 - September 2024</p>
         </div>
 
         <!-- Description and Showcase -->
@@ -102,7 +102,7 @@
                 and winning the game. This project helped me get very thorough with Unreal Engine's <span class="font-semibold">Replication System</span>. Optimization
                 was given top priority, I have ensured to send minimum data across the network to reduce latency, ensuring a smooth gameplay without compromising on
                 quality. I have also implemented <span class="font-semibold">Lag Compensation</span> techniques such as <span class="font-semibold">Server Side Rewind</span>
-                and <span class="font-semibold">Client Side Prediction</span>. It's a fully game prototype with complete game loop.
+                and <span class="font-semibold">Client Side Prediction</span>. It's a full game prototype with complete game loop.
             </p>
         </div>
 
@@ -166,6 +166,10 @@
                 </div>
 
                 <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>Win/Lose Match</p>
+                </div>
+
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
                     <p>Death Box</p>
                 </div>
 
@@ -186,7 +190,7 @@
                 </div>
 
                 <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                    <p>Zone Damage</p>
+                    <p>Zone Damage and Effects</p>
                 </div>
 
                 <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
@@ -210,12 +214,162 @@
                 </div>
 
                 <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
-                    <p>Create, Join, Configure Sessions</p>
+                    <p>Steam SDK</p>
                 </div>
 
+                <div class="bg-blue-100 p-2 rounded-lg shadow-xl">
+                    <p>Create, Join, Configure Sessions</p>
+                </div>
             </div>
         </div>
 
+        <!-- Project Overview Title -->
+        <h1 class="text-2xl text-center font-bold mb-1">Project Overview</h1>
+        <hr class="border-y border-gray-400 mb-2">
+
+        <!-- General Overview -->
+        <h3 class="font-semibold text-xl mt-5 ">Objective of the Project</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+
+        <p>
+            I enjoy building large, complex projects because they offer more challenges, not only in programming mechanics but also in maintaining a large codebase.
+            I always prioritize careful planning before implementation, ensuring that adding new features in the future will be hassle-free. By taking the time to plan
+            properly and implement mechanics with thorough testing, I was able to deliver a final prototype with minimal issues and no game-breaking bugs.
+            <span class="font-semibold">Decoupling</span> features into components was crucial for enabling rapid feature additions and making maintenance
+            and testing more efficient.<br><br>
+
+            This project also made me realize the importance of testing. Spending time to create tools or mechanics for testing proved highly productive and saved a lot of time.
+            I developed a strong interest in testing as it requires innovative solutions to test unique mechanics quickly.<br><br>
+
+            Optimization was a top priority throughout the project. I designed every system to be as efficient as possible, consuming minimal CPU cycles. I also focused on
+            memory optimization, using appropriate data structures and clearing objects from memory when no longer needed. I carefully selected data types to minimize the
+            amount of data sent over the network, and I found solutions to avoid transmitting unnecessary data.
+        </p>
+
+        <!-- Random Loot Generation -->
+        <h3 class="font-semibold text-xl mt-5 ">Random Loot Generation</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+
+        <p>
+            Random loot generation is a crucial part in Battle Royale games. After looking through various approaches, I found <span class="font-semibold">Weight Random</span>
+            choosing to be suitable since it gave more control by taking individual weights and total weight into account.
+        </p>
+
+        <!-- Sub heading - Random Loot Generation -->
+        <h3 class="font-bold text-lg mt-5 ">Assigning Weights</h3>
+        <p>
+            Assigning weights was made easy by the use of <span class="font-semibold">DataTables</span>, so weights can be updated easily by modifying the DataTable, experimenting
+            the Loot Generation is made easy this way. Following are the weights that I use currently.
+        </p>
+
+        <!-- Items Weights DataTable Image -->
+        <div class="flex flex-col mt-5 w-full items-center">
+            <img class="max-w-full md:w-3/4" src="/assets/images/portfolio/battle_royale/loot_gen_dt.png" alt="">
+            <p class="font-semibold text-sm mt-2">[Fig 1] Item Weights DataTables</p>
+        </div>
+
+        <h3 class="font-bold text-lg mt-5">Working</h3>
+        <p>
+            LootSpawnActor is placed all around the map, when the game begins, the server gets all these LootSpawnActors placed in the world. Then based on choosing probability set in
+            the blueprint, it either uses that LootSpawnActor for spawning loot otherwise it just destroys the LootSpawnActor. After that, it determines the number of loot items that
+            need to be spawned in each of the chosen LootSpawnActors randomly ,and it can range upto 1 to 5 items.
+            Next is determining the items to spawn.<br><br>
+
+            First, <span class="font-semibold">ItemType</span> such as Ammo, Throwable, Armour, Weapon have weights, which is used to determine what kind of loot to spawn.
+            Once that has been chosen, the next would be to choose the item of the previously chosen type, for which again weights can be found in the DataTable. By doing this,
+            I have balanced the spawn rate of the item based on the necessity of the item in the game.<br><br>
+
+            After choosing the items to spawn, logic is executed to spawn the chosen items. The LootSpawnActor is a plane, which is divided equally into 4 parts. Each chosen item
+            is randomly spawned in any of the divided part, and placed at random rotation. The reason I have chosen this method is to save the server's CPU time. Since there are 1000s of
+            LootSpawnActors in the world, doing complex calculations and trace testing will be costly. By <span class="font-semibold">profiling</span> the LootGeneration and spawning
+            I found this method to be best, generating loot and spawning them in <span class="font-semibold">few hundred milliseconds</span>. <br><br>
+
+            There is also additional logic, that ensures that when a weapon is spawned, the ammo for the weapons is also spawned along with it.
+        </p>
+
+        <!-- Random Loot Generation Image -->
+        <div class="flex flex-col mt-5 w-full items-center">
+            <img class="max-w-full md:w-1/2" src="/assets/images/portfolio/battle_royale/single_loot_spawn.gif" alt="">
+            <p class="font-semibold text-sm mt-2">[Fig 2] Random Loot Generation</p>
+        </div>
+
+        <!-- Zone and Flight Path Generation -->
+        <h3 class="font-semibold text-xl mt-5 ">Zone and Flight Path Generation</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+
+        <p>
+            Varying the flight path and the zone randomly every game which creates variability in the game. So every match doesn't feel the same. I came up with some solutions to do
+            this effectively and they are highly customizable.
+        </p>
+
+        <h3 class="font-bold text-lg mt-5">Flight Path Generation</h3>
+        
+        <p>
+            The flight need to spawn and move from any side of the map to another side which is on the opposite. To achieve this with maximum variability I have used a spline. Here is
+            how the component responsible for generating the flight path works,
+        </p>
+
+        <ul class="list-disc pl-5">
+            <li>
+                There is a FlightPathActor, which has a spline with 5 points. The points of the spline need to be placed along the edges of the map, and it
+                should form a closed loop, joining point 4 to point 0. Now we have a closed looped spline around the map.
+            </li>
+            <li>
+                The component responsible for generating the flight path, takes this spline.
+            </li>
+            <li>
+                First it chooses any two consecutive points randomly, for example let's say 1 and 2, which will give us a side of the spline.
+            </li>
+            <li>
+                Next, it finds the opposite spline side by adding 2 to both the spline points [(1 + 2) % 4 = 3] and [(2 + 2) % 4 = 4]. So the other side would be the points 3 and 0.
+            </li>
+            <li>
+                Since it has two opposites sides, it finds any random location along the spline sides.
+            </li>
+            <li>
+                We can simply join these two location to get a flight path.
+            </li>
+        </ul>
+
+        <!-- World Bounds Spline Image -->
+        <div class="flex flex-col mt-5 w-full items-center">
+            <img class="max-w-full md:w-3/4" src="/assets/images/portfolio/battle_royale/spline.jpg" alt="">
+            <p class="font-semibold text-sm mt-2">[Fig 3] Spline looped around the map</p>
+        </div>
+
+        <h3 class="font-bold text-lg mt-5">Random Zone Location</h3>
+        <p>
+            The zone can be completely configured using a DataTable. It is possible to change things like Init delay (generally only set for the first zone), Blue Zone shrink start time,
+            Blue Zone shrink time, Safe Zone diameter, Blue Zone Damage per second.
+        </p>
+
+        <h3 class="font-bold text-sm mt-5">Working</h3>
+        <p>
+            For determining the zone location, we again use the spline. Since the spline is a closed loop around the map, it can be used as bounds and points can be generated inside
+            the bounds. The way it is generated is as follows,
+        </p>
+        <ul class="list-disc pl-5">
+            <li>
+                First the spline locations are taken and a polygon is constructed. The spline points are offset inwards to prevent zone clipping out of the map area
+            </li>
+            <li>
+                Depending on the current zone phase, the zone's diameter is obtained from the DataTable
+            </li>
+            <li>
+                For the first zone phase, a random point is found inside the polygon.
+            </li>
+            <li>
+                For the other zone phases, we need to find a new circle inside the previous circle that was found, for that we can calculate the radius difference between
+                the zone circle of previous and current phase, and then find a new point in circle created with the radius difference. That circle will surely be enclosed within
+                the previous zone circle.
+            </li>
+        </ul>
+
+        <!-- Zone Generation Image -->
+        <div class="flex flex-col mt-5 w-full items-center">
+            <img class="max-w-full md:w-3/4" src="/assets/images/portfolio/battle_royale/zone_gen.jpg" alt="">
+            <p class="font-semibold text-sm mt-2">[Fig 4] Zone Generation</p>
+        </div>
 
     </div>
 </div>
