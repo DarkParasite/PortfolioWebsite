@@ -350,10 +350,10 @@
         </p>
         <ul class="list-disc pl-5">
             <li>
-                First the spline locations are taken and a polygon is constructed. The spline points are offset inwards to prevent zone clipping out of the map area
+                First the spline locations are taken and a polygon is constructed. The spline points are offset inwards to prevent zone clipping out of the map area.
             </li>
             <li>
-                Depending on the current zone phase, the zone's diameter is obtained from the DataTable
+                Depending on the current zone phase, the zone's diameter is obtained from the DataTable.
             </li>
             <li>
                 For the first zone phase, a random point is found inside the polygon.
@@ -367,10 +367,67 @@
 
         <!-- Zone Generation Image -->
         <div class="flex flex-col mt-5 w-full items-center">
-            <img class="max-w-full md:w-3/4" src="/assets/images/portfolio/battle_royale/zone_gen.jpg" alt="">
+            <img class="max-w-full md:w-3/5" src="/assets/images/portfolio/battle_royale/zone_gen.jpg" alt="">
             <p class="font-semibold text-sm mt-2">[Fig 4] Zone Generation</p>
         </div>
 
+        <!-- Server Side Rewind -->
+        <h3 class="font-semibold text-xl mt-5 ">Server Side Rewind</h3>
+        <hr class="border-y border-gray-400 mb-2 mr-10">
+        <p>
+            The problem with multiplayer games is that, due to network latency, the time of shooting a bullet and the time this reaches the server for authentication and processing
+            will be different. In low latency scenario, this might not mean much. But even with moderate latency, this can cause some discrepancies such as player getting hit and dying
+            after reaching a cover. To fix this, Server Side Rewind can be used, where the server records data regarding hit boxes of the player in some regular intervals or every frame.
+            So when a player fires a weapon, time of firing the weapon can also be sent along, which can be used to look through the history of the recorded hit box data and test if
+            the shot is a hit or not. Though this can be a good way of ensuring accurate hit based on time, but for very high latency it may not look as intended in the gameplay, so it's
+            best to turn off Server Side Rewind for very high latency.
+        </p><br>
+
+        <p>Below is how I have implemented Server Side Rewind in my project.</p>
+
+        <ul class="list-disc pl-5">
+            <li>
+                Each player has multiple hit boxes which are box and capsule collisions attached to the character mesh.
+            </li>
+            <li>
+                In the server machine, the hit box <span class="font-semibold">Transforms</span> are recorded each frame and stored in a <span>doubly linked list</span>.
+            </li>
+            <li>
+                It is enough to keep records only for a 4 seconds window, other records can be discarded to save memory.
+            </li>
+            <li>
+                When a client machine sends a weapon fire action along with time of fire to the server, the server can iterate through the doubly linked list on both sides,
+                trying to find a record which was recorded at a time closest to the time of fire of the client.
+            </li>
+            <li>
+                If we exactly find a node with the time of fire equal to the time at which the record was saved, we can use the data in the node. But this is a rare case.
+            </li>
+            <li>
+                If we cannot find an exact match, then with the help of next and previous pointers we can find two nodes, one greater than the time of fire and another less than the
+                time of fire. We can interpolate the data between these nodes to get an approximation of how the hit box would have been at that time.
+            </li>
+            <li>
+                The data in the record would be the hit box transforms which we can trace test to see if the weapon fire is a hit or not.
+            </li>
+            <li>
+                Based on the weapon type, which maybe hit-scan or projectile, relevant trace test is performed by moving the hit boxes to the Transforms stored in the record and performing
+                the test, to determine if it's a hit or not.
+            </li>
+        </ul>
+
+        <br>
+        <p>
+            In the below image, a projectile weapon is fired. We can see the green sphere which is a projectile trace, tested against a record that was found based on the time sent
+            from the client. The chosen record is debugged and player is hidden for understanding.
+        </p>
+
+        <!-- Server Side Rewind Image -->
+        <div class="flex flex-col mt-5 w-full items-center">
+            <img class="max-w-full md:w-3/4" src="/assets/images/portfolio/battle_royale/ssr_hitbox.jpg" alt="">
+            <p class="font-semibold text-sm mt-2">[Fig 5] Record at time of hit Debugged</p>
+        </div>
+
+        <br><br>
     </div>
 </div>
 
