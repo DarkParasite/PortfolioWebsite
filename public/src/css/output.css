@@ -702,6 +702,10 @@ video {
   margin-top: auto;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -971,10 +975,6 @@ video {
   text-align: center;
 }
 
-.align-middle {
-  vertical-align: middle;
-}
-
 .font-sans {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -1082,10 +1082,6 @@ video {
 
 .underline {
   text-decoration-line: underline;
-}
-
-.underline-offset-auto {
-  text-underline-offset: auto;
 }
 
 .shadow {
@@ -1204,14 +1200,6 @@ video {
 
   .md\:w-3\/5 {
     width: 60%;
-  }
-
-  .md\:w-4\/6 {
-    width: 66.666667%;
-  }
-
-  .md\:w-full {
-    width: 100%;
   }
 
   .md\:max-w-4xl {
