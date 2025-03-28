@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="icon" href="/assets/icons/scroll-favicon.svg" type="image/x-icon">
+    <link href="/src/css/output.css" rel="stylesheet">
+    <link href="/src/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/src/javascript/scripts.js"></script>
+
+    <title>Rishi Khanna - Home</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KEGQVW1PYF"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KEGQVW1PYF');
+</script>
+
+<body>
+
+<!-- Header -->
+<header class="bg-black text-white p-3">
+    <div class="mx-4 md:mx-60">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold hover:text-blue-400">
+                <a href="/index.html">Rishi Khanna</a>
+            </h1>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex">
+                <ul class="flex space-x-4">
+                    <li><a class="hover:text-blue-400" href="/index.html">Portfolio</a></li>
+                    <li><a class="hover:text-blue-400" href="/pages/resume.html">Resume</a></li>
+                    <li><a class="hover:text-blue-400" href="/pages/contact.html">Contact</a></li>
+                    <li><a class="hover:text-blue-400" href="https://darkparasite.github.io/GameDevCodex/" target="_blank" rel="noopener noreferrer">GameDevCodex</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-2xl">&#9776;</button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="md:hidden bg-black text-white">
+        <ul class="flex flex-col space-y-4 p-4">
+            <li><a class="hover:text-blue-400" href="/index.html">Portfolio</a></li>
+            <li><a class="hover:text-blue-400" href="/pages/resume.html">Resume</a></li>
+            <li><a class="hover:text-blue-400" href="/pages/contact.html">Contact</a></li>
+            <li><a class="hover:text-blue-400" href="https://darkparasite.github.io/GameDevCodex/" target="_blank" rel="noopener noreferrer">GameDevCodex</a></li>
+        </ul>
+    </nav>
+
+    
+    <script>
+        // JavaScript to toggle the mobile menu
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            let menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('open');
+        });
+    </script>
+
+</header>
+
+
+<!-- Main Body -->
+<div class="flex flex-col items-center w-full h-full bg-gray-100 min-h-screen">
+
+    <!-- Intro Box -->
+    <div class="bg-white p-6 rounded-lg shadow-xl items-center mt-5 w-11/12 md:w-3/5">
+        <h2 class="text-xl font-semibold">Who Am I?</h2>
+
+        <!-- About Me Text -->
+        <div class="mt-4">
+
+            <p>Self-taught, insanely passionate <span class="font-semibold text-blue-500">Game Programmer</span>, with over <span
+                    class="font-semibold text-blue-500">4 years</span> of experience making games in Unreal Engine.
+                Started my game dev journey in 12th grade, in college I <span class="font-semibold text-blue-500">freelanced</span> on Fiverr, working with clients worldwide.</p>
+
+            <br>
+            <p>Currently, I'm working at <a href="https://labs.aeoscompany.com/" class="font-semibold text-blue-500 hover:underline" target="_blank">Aeos Labs</a> as a
+                <span class="font-semibold text-blue-500">Game Programmer.</span> I'm on the path to mastering the art of making and designing games.
+                I value game development and games more than anything, I consider it the highest form of art, where you can present different perspectives,
+                virtues, and knowledge as an experience.</p>
+
+            <br>
+            <p>I get high from designing and building complex systems that are beautifully decoupled and does their job like a machine.
+                <span class="font-semibold text-black">C++ forever.</span> It’s like a <span class="font-semibold text-black">Katana</span> that demands form and control, but in the hands of a Kensei,
+                it turns the blood of his enemies into paint and the battlefield as the canvas.</p>
+
+            <br>
+            <div class="mt-6 text-center">
+                <p class="text-lg italic font-semibold text-gray-600">"A well-designed game could tell it's story in silence."</p>
+                <p class="text-sm font-medium text-gray-500">- Hidetaka Miyazaki</p>
+            </div>
+
+        </div>
+
+
+        <div class="flex items-center mt-2">
+            <!-- LinkedIn Icon -->
+            <a href="https://www.linkedin.com/in/rishikhanna47/" class="mr-4 hover:text-blue-500 text-3xl"
+               target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <!-- GitHub Icon -->
+            <a href="https://github.com/DarkParasite" class="mr-4 hover:text-purple-500 text-3xl" target="_blank"
+               rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a><!-- Fiverr Icon -->
+            <a href="https://www.fiverr.com/darkparasite/" class="mr-4 text-3xl" target="_blank"
+               rel="noopener noreferrer">
+                <img src="assets/icons/fiverr-icon.svg" class="h-8 w-8" alt="Fiverr"
+                     onmouseover="this.src='assets/icons/fiverr-icon-green.svg';"
+                     onmouseout="this.src='assets/icons/fiverr-icon.svg';">
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Card Title Box -->
+    <div class="bg-white p-2 rounded-lg shadow-xl items-center my-5 w-40">
+        <p class="text-xl text-center font-medium">Projects</p>
+    </div>
+
+    <!-- Card Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 md:max-w-4xl mb-20 gap-1">
+
+        <!-- Card [Battle Royale Game]-->
+        <a href="pages/portfolio/battle_royale.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/battle-royale-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">Battle Royale Game</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        Made from scratch over span of 5 months with more than 40,000 lines of code.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">C++</span>
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Multiplayer</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [Render Engine]-->
+        <a href="pages/portfolio/render_engine.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/render-engine-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">3D Rendering Engine</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        Phong Lighting Model implemented using OpenGL, SDL2 and other libraries.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">C++</span>
+                        <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">GLSL</span>
+                        <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">OpenGL</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">SDL2</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [FPS Shooter and Parkour]-->
+        <a href="/pages/portfolio/fps_shooter_parkour.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/fps-game-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">FPS Shooter Parkour Game</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        First-Person Shooter game with wall running, grappling, AI and other unique abilities.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">C++</span>
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">AI</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [Zombie Shooter]-->
+        <a href="pages/portfolio/zombie_shooter.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/zombie-shooter-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">Zombie Shooter Game</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        Zombie Shooter game where there are infinite number of waves, with increasing difficulty.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">C++</span>
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">AI</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [Stealth AI]-->
+        <a href="pages/portfolio/stealth_ai.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/stealth-ai-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">Stealth AI</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        AI mechanics like patrolling, detection, searching, taking hostage, melee combat, finding and switching cover etc.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">AI</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [VR Learning Simulations]-->
+        <a href="pages/portfolio/vr-learning-simulations.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/vr-learning-platform-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">VR Learning Simulations</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        Solar System and interactable Human Anatomy simulation in Virtual Reality.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">VR</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [Procedural Hand Grabbing in VR]-->
+        <a href="pages/portfolio/procedural_hand_grabbing_vr.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/vr-procedural-grab-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">Procedural Hand Grabbing in VR</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        Fingers of the VR Hand Mesh snaps to the dynamic shape of the object grabbed.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">VR</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [Co-op Multiplayer Puzzles]-->
+        <a href="pages/portfolio/coop_multiplayer_puzzles.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/coop-multiplayer-puzzle-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">Co-op Multiplayer Puzzles</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        Basic Puzzles implemented using Unreal Engine Replication system.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">C++</span>
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-red-200 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Multiplayer</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [Exploration Game]-->
+        <a href="pages/portfolio/exploration-game.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/exploration-game-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">Exploration Game</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        Visit Worlds, Fight, Collect, go back to Base, Exchange items for Coins, Buy Weapons, Equipment, REPEAT.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [TPP Shooter Game]-->
+        <a href="pages/portfolio/ttp_shooter_game.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/ttp-shooter-game-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">TPP Shooter Game</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        One of the first games I have ever made, implemented Basic Shooter game mechanics.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">C++</span>
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card [Abilities Game]-->
+        <a href="pages/portfolio/abilities-game.html">
+            <div class="bg-white p-2 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+
+                <!-- Image -->
+                <div class="h-64 bg-cover bg-center"
+                     style="background-image: url('/assets/images/card_thumbnails/abilities-game-img.jpg');"></div>
+                <div class="p-1">
+
+                    <!-- Title -->
+                    <h2 class="text-xl text-blue-500 font-bold mb-1">Abilities Game</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 mb-2">
+                        Implemented various abilities using Paragon characters and assets.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-0.5 mb-2">
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">C++</span>
+                        <span class="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Blueprint</span>
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Unreal Engine</span>
+                    </div>
+
+                    <!-- Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700">See More</button>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Scroll to top button -->
+<button id="scrollToTopBtn" style="opacity: 0; pointer-events: none; transition: opacity 0.5s;" onclick="scrollToTop()"
+        class="fixed bottom-10 right-10 bg-black text-white font-bold py-2 px-4 rounded-full hover:bg-gray-700">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<footer class="bg-black text-white p-4 mt-auto w-full">
+    <div class="container mx-auto text-center">
+        <p class="text-sm">© 2024 Rishi Khanna. All rights reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

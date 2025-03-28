@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="icon" href="/assets/icons/scroll-favicon.svg" type="image/x-icon">
+    <link href="/src/css/output.css" rel="stylesheet">
+    <link href="/src/css/custom.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <title>Rishi Khanna - Home</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KEGQVW1PYF"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KEGQVW1PYF');
+</script>
+
+<body class="">
+
+<!-- Header -->
+<header class="bg-black text-white p-3">
+    <div class="mx-4 md:mx-60">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold hover:text-blue-400">
+                <a href="/index.html">Rishi Khanna</a>
+            </h1>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex">
+                <ul class="flex space-x-4">
+                    <li><a class="hover:text-blue-400" href="/index.html">Portfolio</a></li>
+                    <li><a class="hover:text-blue-400" href="/pages/resume.html">Resume</a></li>
+                    <li><a class="hover:text-blue-400" href="/pages/contact.html">Contact</a></li>
+                    <li><a class="hover:text-blue-400" href="https://darkparasite.github.io/GameDevCodex/" target="_blank" rel="noopener noreferrer">GameDevCodex</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-2xl">&#9776;</button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="md:hidden bg-black text-white">
+        <ul class="flex flex-col space-y-4 p-4">
+            <li><a class="hover:text-blue-400" href="/index.html">Portfolio</a></li>
+            <li><a class="hover:text-blue-400" href="/pages/resume.html">Resume</a></li>
+            <li><a class="hover:text-blue-400" href="/pages/contact.html">Contact</a></li>
+            <li><a class="hover:text-blue-400" href="https://darkparasite.github.io/GameDevCodex/" target="_blank" rel="noopener noreferrer">GameDevCodex</a></li>
+        </ul>
+    </nav>
+
+
+    <script>
+        // JavaScript to toggle the mobile menu
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            let menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('open');
+        });
+    </script>
+
+</header>
+
+<div class="flex flex-col items-center w-full h-full bg-gray-100 min-h-screen">
+
+    <div class="bg-white rounded-lg shadow-2xl p-6 my-5 font-sans leading-relaxed h-full w-11/12 md:w-3/5">
+
+        <h1 class="text-3xl font-bold mb-1">Rishi Khanna</h1>
+        <p class="mb-2">
+            Sivakasi, Tamil Nadu | +91 6369778840 |
+            <a class="text-blue-500 hover:underline" href="mailto:rishikhannalive@gmail.com" target="_blank" rel="noopener noreferrer">rishikhannalive@gmail.com</a> |
+            <a class="text-blue-500 hover:underline" href="https://www.linkedin.com/in/rishikhanna47/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+            <a class="text-blue-500 hover:underline" href="https://github.com/DarkParasite" target="_blank" rel="noopener noreferrer">GitHub</a> |
+            <a class="text-blue-500 hover:underline" href="https://www.fiverr.com/darkparasite" target="_blank" rel="noopener noreferrer">Fiverr</a>
+        </p>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-semibold">Education</h2>
+
+            <hr class="border-y border-gray-400 mb-2">
+
+            <p class="font-bold">PSG College Of Technology | Coimbatore, Tamil Nadu</p>
+            <p>Bachelor of Information Technology | 05/2025</p>
+            <p class="font-bold">The Sivakasi Lions School | Sivakasi, Tamil Nadu</p>
+            <p>Computer Science | 04/2021</p>
+            <p>Achieved a perfect score of <span class="font-semibold">100%</span> in Computer Science in 11th grade</p>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-semibold">Experience</h2>
+
+            <hr class="border-y border-gray-400 mb-2">
+
+            <p class="font-bold">Fiverr</p>
+            <p>Freelance Game Developer | 09/2022 - 03/2024</p>
+            <p><span class="font-semibold">Level 2 seller</span> on Fiverr, experienced in working with various clients to meet their game development needs
+                with creativity and skill.</p>
+            <p><span class="font-semibold">Profile</span> :
+                <a class="text-blue-500 hover:underline" href="https://www.fiverr.com/darkparasite" target="_blank" rel="noopener noreferrer">
+                    https://www.fiverr.com/darkparasite
+                </a>
+            </p>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-semibold">Notable Projects</h2>
+
+            <hr class="border-y border-gray-400 mb-2">
+
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold">OpenGL based Render Engine (C++, GLSL)</h3>
+                <p>Render engine written from scratch, implementing the <span class="font-semibold">Phong Lighting Model</span>. Implemented using
+                    <span class="font-semibold">OpenGL, SDL, Assimp libraries.</span>
+                </p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold">Battle Royale Game (C++)</h3>
+                <p>Worked on a Battle Royale game from scratch similar to PUBG PC version. Highly focused on optimized gameplay and optimized replication. Implements features like
+                    <span class="font-semibold">Server Side Rewind and Client Side Prediction</span> for compensating lag.</p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold">VR - Solar System and Human Anatomy Simulation (Blueprints-VR)</h3>
+                <p>Developed immersive VR experiences, including a Solar System simulation with realistic orbit mechanics
+                    and an interactive Human Anatomy model.</p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold">Third Person Zombie Shooter (C++)</h3>
+                <p>Wave-based zombie shooter game, with logic to spawn AI randomly and infinitely in Unreal Engine 5.</p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold">First Person Shooter Mechanics (C++)</h3>
+                <p>Implemented various fast-paced FPS mechanics and unique abilities inspired by different games in Unreal
+                    Engine 5.</p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold">Stealth AI (Blueprints)</h3>
+                <p>Created advanced stealth AI mechanics using Blueprints, <span class="font-semibold">Behavior tree, and EQS</span> Optimized multiple AIs to
+                    share navigation data and resources.</p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold">Exploration Third Person Game (Blueprints)</h3>
+                <p>Developed <span class="font-semibold">Inventory/Buy/Sell</span> system with data table-driven functionality and a customizable gameplay loop
+                    for the client.</p>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold">Malware Scripts (Python)</h3>
+                <p>Developed malware scripts such as <span class="font-semibold">Backdoor, Keylogger,</span> and
+                    <span class="font-semibold">ARP Spoofing scripts</span>. Executables remained <span class="font-semibold">undetected</span> by most antivirus software.</p>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-semibold mb-2">Technical Skills</h2>
+
+            <hr class="border-y border-gray-400 mb-2">
+
+            <p><span class="font-bold">Languages:</span> C++, Python, Java, SQL, HTML, CSS, JavaScript, GLSL</p>
+            <p><span class="font-bold">Tools:</span> Git, Perforce, Visual Studio, JetBrains Rider, Wavepad, Audacity, Flimora, DaVinci Resolve
+                Photoshop, Trello</p>
+            <p><span class="font-bold">Frameworks and Engines:</span> Unreal Engine 4, Unreal Engine 5</p>
+        </div>
+
+        <!-- Floating Resume Download Button -->
+        <div class="fixed bottom-10 right-10">
+            <a href="/assets/downloads/resume.pdf"
+               download="RishiKhannaResume.pdf"
+               class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+                Download Resume
+            </a>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-semibold mb-2">Personal Note</h2>
+
+            <hr class="border-y border-gray-400 mb-2">
+
+            <p>Passionate Game Developer who gets excited and fulfilled building games and other interesting things that
+                power them. Creating and playing games energizes me, and I deeply admire the art of Game Design. I have
+                played over 100 single-player titles and numerous multiplayer games.</p>
+        </div>
+    </div>
+
+    <footer class="bg-black text-white p-4 mt-auto w-full">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">© 2024 Rishi Khanna. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
