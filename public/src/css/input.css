@@ -1,3 +1,133 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Rebuild after editing:  npm run build:css  (or  npm run watch:css  while working) */
+
+@layer base {
+    body {
+        @apply bg-gray-100 text-gray-900 flex flex-col min-h-screen;
+        /* subtle dot grid */
+        background-image: radial-gradient(theme('colors.gray.300') 1px, transparent 1px);
+        background-size: 22px 22px;
+    }
+    main {
+        @apply flex-1;
+    }
+}
+
+@layer components {
+
+    /* ---------- Layout ---------- */
+
+    .container-wide { @apply w-full max-w-6xl mx-auto px-4; }
+    .container-narrow { @apply w-full max-w-4xl mx-auto px-4; }
+
+    /* White content box */
+    .panel { @apply bg-white rounded-lg shadow-xl; }
+
+    /* "01. Section Title            // note" */
+    .section-title { @apply flex items-end justify-between border-b-2 border-gray-300 pb-2 mb-6; }
+    .section-title h2 { @apply text-2xl font-bold; }
+    .section-title .num { @apply font-mono text-lg text-blue-500 mr-2; }
+    .section-title .note { @apply hidden sm:inline font-mono text-sm text-gray-500; }
+
+    /* ---------- Header / footer ---------- */
+
+    .mobile-menu {
+        @apply bg-black overflow-hidden opacity-0;
+        max-height: 0;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    .mobile-menu.open { @apply opacity-100; max-height: 500px; }
+
+    .scroll-top {
+        @apply fixed bottom-10 right-10 z-30 bg-black text-white py-2 px-4 rounded-full hover:bg-gray-700 opacity-0 pointer-events-none transition-opacity duration-500;
+    }
+    .scroll-top.visible { @apply opacity-100 pointer-events-auto; }
+
+    /* ---------- Small pieces ---------- */
+
+    /* Markdown-style `inline code` highlight */
+    .hl { @apply font-mono text-[0.85em] bg-gray-200/80 text-gray-900 px-1.5 py-0.5 rounded-md whitespace-nowrap; }
+
+    .tag { @apply text-xs font-semibold px-2.5 py-0.5 rounded; }
+    .tag-blue { @apply bg-blue-200 text-blue-800; }
+    .tag-red { @apply bg-red-200 text-red-800; }
+    .tag-green { @apply bg-green-200 text-green-800; }
+    .tag-yellow { @apply bg-yellow-200 text-yellow-800; }
+    .tag-gray { @apply bg-gray-200 text-gray-800; }
+
+    .status { @apply inline-flex items-center gap-1.5 bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded; }
+    .status::before { content: ''; @apply h-1.5 w-1.5 rounded-full bg-green-500; }
+
+    .btn { @apply inline-block bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700; }
+    .link-mono { @apply font-mono text-sm font-semibold text-blue-500 hover:underline; }
+    .back-link { @apply font-mono text-sm text-gray-500 hover:text-blue-500; }
+
+    .chip { @apply font-mono text-sm px-3 py-1 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-gray-900; }
+    .chip .count { @apply text-gray-400; }
+    .chip.active { @apply bg-black text-white border-black; }
+
+    /* ---------- Cards ---------- */
+
+    .project-card { @apply flex flex-col bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-2xl; }
+    .project-card:hover .see-more { @apply underline; }
+    .card-index { @apply absolute top-2 left-2 font-mono text-xs bg-black/70 text-white px-1.5 py-0.5 rounded; }
+    .card-path { @apply font-mono text-xs text-gray-400 mb-1 truncate; }
+    .see-more { @apply mt-auto font-mono text-sm font-semibold text-blue-500; }
+
+    .nav-card { @apply panel flex flex-col gap-1 p-4 transition duration-300 hover:-translate-y-0.5 hover:shadow-2xl; }
+
+    /* ---------- Long-form text (project pages, resume) ----------
+       Write plain HTML inside <article class="doc"> and it gets styled:
+       h2 = numbered section, h3 = sub-section, h4 = small heading,
+       <strong> = bold, <code> = inline code, <ul class="features"> = feature grid,
+       <div class="video"><iframe></div>, <figure class="code"><figcaption>file</figcaption><pre><code>…</code></pre></figure> */
+
+    .doc { counter-reset: section; }
+    .doc > :first-child { @apply mt-0; }
+
+    .doc h2 { @apply text-2xl font-bold mt-12 mb-4 pb-2 border-b-2 border-gray-300; counter-increment: section; }
+    .doc h2::before { content: counter(section, decimal-leading-zero) "."; @apply font-mono text-lg text-blue-500 mr-2; }
+    .doc h3 { @apply text-xl font-semibold mt-8 mb-2; }
+    .doc h4 { @apply text-lg font-bold mt-6 mb-1; }
+
+    .doc p { @apply text-gray-800 leading-relaxed mt-3; }
+    .doc strong { @apply font-semibold text-gray-900; }
+    .doc a:not(.btn) { @apply text-blue-600 font-semibold hover:underline; }
+    .doc :not(pre) > code { @apply hl; }
+
+    .doc ul, .doc ol { @apply pl-6 mt-3 space-y-1 text-gray-800; }
+    .doc ul { @apply list-disc; }
+    .doc ol { @apply list-decimal; }
+
+    .doc ul.features { @apply list-none pl-0 grid sm:grid-cols-2 gap-2 space-y-0; }
+    .doc ul.features li { @apply bg-gray-50 border border-gray-200 rounded-md px-3 py-2; }
+    .doc ul.features li::before { content: '▹'; @apply text-blue-500 mr-2; }
+
+    .doc .video { @apply mt-6; }
+    .doc .video iframe { @apply block w-full aspect-video rounded-lg shadow-lg; }
+
+    .doc img { @apply block max-w-full mx-auto mt-6 rounded-lg shadow-md; }
+    .doc figure:not(.code) figcaption { @apply mt-2 text-center font-mono text-xs text-gray-500; }
+
+    /* Resume entries: <div class="entry"><div class="entry-head"><h3>…</h3><span class="entry-date">…</span></div>…</div> */
+    .doc .entry { @apply mt-6; }
+    .doc .entry-head { @apply flex flex-wrap items-baseline justify-between gap-x-4; }
+    .doc .entry-head h3 { @apply mt-0 mb-0; }
+    .doc .entry-date { @apply font-mono text-sm text-gray-500; }
+    .doc .entry-role { @apply mt-0 text-gray-600; }
+    .doc .entry-tech { @apply font-mono text-sm font-normal text-gray-500 ml-1; }
+
+    .doc .skills { @apply grid sm:grid-cols-[auto,1fr] gap-x-6 gap-y-2 mt-4; }
+    .doc .skills dt { @apply font-semibold; }
+    .doc .skills dd { @apply text-gray-800; }
+
+    .contact-card { @apply flex items-center gap-3 border border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-md transition; }
+
+    .doc figure.code { @apply mt-6 rounded-lg shadow-lg overflow-hidden; }
+    .doc figure.code figcaption { @apply bg-gray-700 text-gray-200 font-mono text-xs px-4 py-2; }
+    .doc figure.code pre { @apply m-0; }
+    .doc figure.code code { @apply block text-xs md:text-sm overflow-x-auto; }
+}
