@@ -1,4 +1,7 @@
 .idea
+.claude
 node_modules
 
-.claude
+# Cloudflare Worker local files (worker/.dev.vars holds secrets for local testing)
+.wrangler
+.dev.vars

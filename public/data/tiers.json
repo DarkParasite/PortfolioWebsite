@@ -1,0 +1,13 @@
+{
+  "title": "Game Tier List",
+  "intro": "Games I've played, ranked.",
+  "tiers": [
+    { "id": "s", "label": "S", "caption": "", "color": "#ff7f7f", "games": [] },
+    { "id": "a", "label": "A", "caption": "", "color": "#ffbf7f", "games": [] },
+    { "id": "b", "label": "B", "caption": "", "color": "#ffdf7f", "games": [] },
+    { "id": "c", "label": "C", "caption": "", "color": "#ffff7f", "games": [] },
+    { "id": "d", "label": "D", "caption": "", "color": "#bfff7f", "games": [] },
+    { "id": "f", "label": "F", "caption": "", "color": "#7fbfff", "games": [] }
+  ],
+  "unranked": []
+}

@@ -10,6 +10,10 @@ Static site served from `public/` on GitHub Pages (deployed on every push to `ma
 | `public/src/javascript/projects.js` | The list of personal projects. Builds the home page cards and filters, and each project page's title block and prev/next links. |
 | `public/src/css/input.css` | Tailwind source plus the shared component classes (`.panel`, `.tag`, `.hl`, `.doc`, …). |
 | `public/src/css/output.css` | Compiled CSS. Generated, don't edit by hand. |
+| `public/tiers/` | Game tier list page (`/tiers/`) and its editor (`/tiers/edit/`). |
+| `public/src/javascript/tiers.js`, `tier-editor.js` | Tier list rendering and the editor. |
+| `public/data/tiers.json` | Tier list data. Written by the editor, don't edit by hand. |
+| `worker/` | Cloudflare Worker behind the editor (password check, IGDB search, commits to GitHub). Setup: [worker/README.md](worker/README.md). |
 
 ## Adding a personal project
 

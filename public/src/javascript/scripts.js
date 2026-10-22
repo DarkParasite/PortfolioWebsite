@@ -26,6 +26,7 @@ const SOCIALS = {
 const NAV_LINKS = [
     { label: 'work', href: '/#work' },
     { label: 'resume', href: '/pages/resume.html' },
+    { label: 'tier list', href: '/tiers/' },
     { label: 'contact', href: '/pages/contact.html' },
 ];
 

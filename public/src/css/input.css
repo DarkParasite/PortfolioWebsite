@@ -136,4 +136,69 @@
     .doc figure.code figcaption { @apply bg-gray-700 text-gray-200 font-mono text-xs px-4 py-2; }
     .doc figure.code pre { @apply m-0; }
     .doc figure.code code { @apply block text-xs md:text-sm overflow-x-auto; }
+
+    /* ---------- Game tier list (/tiers/ and the editor at /tiers/edit/) ---------- */
+
+    /* Dark board so cover art pops. --cover-w sets the cover size inside it. */
+    .tier-board { @apply bg-zinc-950 rounded-lg shadow-xl overflow-hidden; --cover-w: 3.75rem; }
+    @screen sm { .tier-board { --cover-w: 5rem; } }
+    @screen md { .tier-board { --cover-w: 5.5rem; } }
+
+    .tier-row { @apply flex border-b-2 border-zinc-950 last:border-b-0; }
+    .tier-label { @apply flex flex-col items-center justify-center shrink-0 w-16 sm:w-24 px-1 py-2 text-center text-black; }
+    .tier-letter { @apply text-2xl sm:text-4xl font-bold leading-none break-all; }
+    .tier-letter-long { @apply text-xs sm:text-base leading-tight break-words; }
+    .tier-caption { @apply mt-1.5 w-full font-mono text-[9px] sm:text-xs leading-tight opacity-75 hyphens-auto [overflow-wrap:anywhere]; }
+    .tier-items {
+        @apply flex flex-wrap content-start flex-1 gap-1.5 sm:gap-2 p-1.5 sm:p-2 bg-zinc-900;
+        min-height: calc(var(--cover-w) * 374 / 264 + 1rem);
+    }
+    .tier-items .cover { width: var(--cover-w); }
+
+    /* Game cover, IGDB's 264x374 shape. The name sits underneath and shows if the image is missing or fails. */
+    .cover { @apply relative block shrink-0 w-full overflow-hidden rounded bg-zinc-800 select-none; aspect-ratio: 264 / 374; }
+    .cover img { @apply absolute inset-0 w-full h-full object-cover; }
+    .cover-fallback { @apply absolute inset-0 flex items-center justify-center p-1.5 text-center font-mono text-[10px] leading-tight text-zinc-300 bg-gradient-to-b from-zinc-700 to-zinc-800 break-words; }
+    .cover-name { @apply absolute inset-x-0 bottom-0 px-1.5 pb-1 pt-5 text-left text-[10px] sm:text-xs font-semibold leading-tight text-white bg-gradient-to-t from-black/90 to-transparent opacity-0 transition-opacity; }
+    button.cover { @apply cursor-pointer outline-none transition duration-150 hover:-translate-y-0.5 hover:ring-2 hover:ring-white/80 focus-visible:ring-2 focus-visible:ring-blue-400; }
+    button.cover:hover .cover-name, button.cover:focus-visible .cover-name { @apply opacity-100; }
+
+    .tier-badge { @apply inline-flex items-center font-mono text-xs font-semibold px-2 py-0.5 rounded text-black; }
+
+    /* Popup (<dialog class="modal">) */
+    .modal { @apply p-0 m-auto w-[calc(100%-2rem)] max-w-xl rounded-lg shadow-2xl bg-white text-gray-900 overflow-hidden; }
+    .modal::backdrop { @apply bg-black/70 backdrop-blur-sm; }
+
+    /* Editor */
+    .field-label { @apply block font-mono text-xs text-gray-500 mb-1; }
+    .input { @apply block w-full rounded border border-gray-300 bg-white px-3 py-1.5 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20; }
+    .btn:disabled { @apply opacity-40 cursor-not-allowed hover:bg-blue-500; }
+    .btn-ghost { @apply inline-flex items-center justify-center gap-1.5 rounded border border-gray-300 bg-white px-3 py-1.5 font-mono text-sm text-gray-700 hover:border-gray-900 hover:text-gray-900 cursor-pointer; }
+    .btn-ghost:disabled { @apply opacity-40 cursor-not-allowed border-gray-300 text-gray-700; }
+    .btn-danger { @apply inline-flex items-center gap-1.5 font-mono text-sm text-red-600 hover:underline; }
+
+    .tier-row .tier-handle { @apply flex items-center px-2 text-zinc-600 bg-zinc-900 border-l border-zinc-950 cursor-grab hover:text-zinc-300 active:cursor-grabbing; }
+    button.tier-label { @apply relative hover:brightness-95; }
+    button.tier-label::after { content: '\f304'; font-family: 'Font Awesome 6 Free'; @apply absolute top-1 right-1.5 text-[10px] font-black opacity-0 transition-opacity; }
+    button.tier-label:hover::after { @apply opacity-50; }
+    .tier-items.editable:empty { @apply content-center; }
+    .tier-items.editable:empty::before { content: 'drop games here'; @apply mx-auto font-mono text-xs text-zinc-600; }
+    .cover-ghost { @apply opacity-30; }
+    .tier-ghost { @apply opacity-50; }
+
+    .unranked-tray { @apply rounded-lg border-2 border-dashed border-gray-300 bg-white p-3; --cover-w: 4rem; }
+    @screen sm { .unranked-tray { --cover-w: 5rem; } }
+    .unranked-tray .tier-items { @apply bg-transparent p-0; min-height: calc(var(--cover-w) * 374 / 264); }
+    .unranked-tray .tier-items.editable:empty::before { content: 'new games land here, drag them into a tier'; @apply text-gray-400; }
+
+    .result { @apply relative flex flex-col justify-start text-left disabled:cursor-default; }
+    .result:not(:disabled):hover .cover { @apply ring-2 ring-blue-500; }
+    .result .added { @apply absolute inset-0 flex items-center justify-center bg-black/60 text-white text-xl; }
+
+    .swatch { @apply h-7 w-7 rounded border-2 border-transparent cursor-pointer; }
+    .swatch.active { @apply border-gray-900; }
+
+    .toast { @apply fixed bottom-6 left-1/2 z-50 -translate-x-1/2 max-w-[calc(100%-2rem)] rounded bg-black px-4 py-2 font-mono text-sm text-white shadow-xl opacity-0 pointer-events-none transition-opacity duration-300; }
+    .toast.visible { @apply opacity-100; }
+    .toast.error { @apply bg-red-700; }
 }

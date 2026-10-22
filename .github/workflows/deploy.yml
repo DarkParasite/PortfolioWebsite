@@ -5,6 +5,11 @@ on:
     branches:
       - master  # Default branch of your repository
 
+# Tier list saves can push several commits close together: run deploys one at a time so the newest always lands last.
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
 permissions:
   contents: write  # Explicitly grant write permissions
 
