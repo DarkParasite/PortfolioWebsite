@@ -173,7 +173,10 @@ async function github(env, path, { method = 'GET', body, allow404 = false } = {}
     if (!res.ok) {
         const detail = (await res.text()).slice(0, 300);
         console.error(`GitHub ${method} ${path} -> ${res.status}: ${detail}`);
-        const err = httpError(502, `GitHub error ${res.status}. Check GITHUB_TOKEN and GITHUB_REPO.`);
+        const hint = res.status === 401 ? 'GITHUB_TOKEN is invalid or expired.'
+            : res.status === 403 ? 'GITHUB_TOKEN needs "Contents: Read and write" on this repo.'
+            : 'Check GITHUB_TOKEN and GITHUB_REPO.';
+        const err = httpError(502, `GitHub error ${res.status}. ${hint}`);
         if (res.status === 409 || res.status === 422) err.status = res.status;
         throw err;
     }
