@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Rendering Engine - Rishi Khanna</title>
+    <meta name="description" content="Phong Lighting Model implemented using OpenGL, SDL2 and other libraries.">
+    <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/assets/icons/d20-favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+    <link rel="stylesheet" href="/src/css/output.css">
+    <script src="/src/javascript/scripts.js"></script>
+    <script src="/src/javascript/projects.js"></script>
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="container-narrow py-10">
+    <project-header></project-header>
+
+    <article class="panel doc p-6 md:p-10 mt-8">
+
+        <h2>Description and Showcase</h2>
+
+        <p>
+            Developed a 3D Render Engine utilizing C++, OpenGL, SDL2, Assimp and many other libraries. This project
+            implements the <code>Phong Lighting Model</code> with Directional Light,
+            Omnidirectional Light, Point Light, SpotLight and Ambient Light.
+        </p>
+
+        <p>
+            I was curious how graphics works, so first I learned Computer Graphics on YouTube from
+            <a href="https://www.youtube.com/@cem_yuksel" target="_blank" rel="noopener noreferrer">Cem Yuksel</a>
+            a top Graphics Professor from the University of Utah. Then I started working on this 3D Render Engine.
+        </p>
+
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/rHnem9oalLM?si=iFzgZYI1DPfgr4ei" title="3D Rendering Engine - Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h2>Key Features and Mechanics</h2>
+
+        <ul class="features">
+            <li>SDL2 Window and Input</li>
+            <li>Translation, Rotation, Scale</li>
+            <li>Camera Movement</li>
+            <li>Perspective Projection</li>
+            <li>Phong Lighting Model</li>
+            <li>Directional and Omnidirectional Lights</li>
+            <li>Pointlight and Spotlight</li>
+            <li>Importing Custom 3D Models</li>
+        </ul>
+
+        <h2>Project Overview</h2>
+
+        <h3>General Overview</h3>
+
+        <p>
+            I programmed a 3D rendering engine using OpenGL and SDL2 to gain a deeper understanding of how graphics work from a low-level perspective.
+            This project provided me with a comprehensive understanding of how the GPU renders a model on the screen through the process of rasterization.
+            I loved learning about vertex, fragment, and geometry shaders, the implementation of perspective projection, and other key concepts that are essential to the
+            functionality of a game engine.
+        </p>
+
+        <p>
+            I have implemented the Phong lighting model, which is a simplified approximation of the more general rendering equation. The Phong lighting model
+            consists of three main components: ambient, diffuse, and specular lighting. I have implemented <strong>Perspective Projection</strong> which
+            gives the 3D perspective look in video games, and we can move around the world. Based on the camera's location, every model in the scene will
+            move and the models on the screen will be rasterized to display the 3D world in the window.
+        </p>
+
+        <h3>Libraries Used</h3>
+        <p>
+            These are the libraries I have used, but not limited to these
+        </p>
+
+        <ul>
+            <li>SDL2 (Window, input and other functions)</li>
+            <li>OpenGL (Graphics Rendering API)</li>
+            <li>glew</li>
+            <li>glm (Math library perfect for game engines)</li>
+            <li>Assimp (Models importing library)</li>
+        </ul>
+
+        <h3>Window</h3>
+
+        <p>
+            I was deciding between using <strong>glfw</strong> and <strong>SDL2</strong>, and decided to stick with SDL2 since it has functions
+            for various things like input, audio, even a simple 2D rendering features along with Window. Setting up the
+            Window with SDL was pretty easy, it worked really great.
+            Inspecting the header files was enough to understand what each function does, everything was document
+            clearly. So I set up a basic window with SDL2. I still had some
+            issues with fullscreen at desktop native resolution, but I never got around it since I didn't want to spend
+            much time on the window alone. There were so many flags that
+            you could pass to the CreateWindow, it had fun testing out different flags. Here is a small snippet of it.
+        </p>
+
+        <figure class="code">
+            <figcaption>MainWindow.cpp</figcaption>
+<pre><code class="language-cpp">int MainWindow::Initialize()
+{
+    // NOTE : SOME CODE HAS BEEN OMITTED
+    Window = SDL_CreateWindow("Editor", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+    SDL_GL_GetDrawableSize(Window, &BufferWidth, &BufferHeight);
+    GLContext = SDL_GL_CreateContext(Window);
+}</code></pre>
+        </figure>
+
+        <h3>Input</h3>
+
+        <p>
+            For a clean input handling in the engine, I followed these two
+        </p>
+        <ol>
+            <li>Followed the <strong>Command Design Pattern</strong></li>
+            <li>Decoupled the input into a separate component</li>
+        </ol>
+
+        <p>
+            We can bind any function to different inputs of input type like PRESSED and RELEASED. The
+            InputHandlingComponent will poll the keyboard and mouse states with SDL,
+            then updates the necessary axis values, and also does the callback to the functions that are bound
+            to different inputs.
+        </p>
+
+        <figure class="code">
+            <figcaption>main.cpp</figcaption>
+<pre><code class="language-cpp">int MainWindow::Initialize() // Input callback functions
+void W_Pressed() { }
+void W_Released() { }
+
+// Binding Inputs
+InputHandling.BindInputAction(INP_KEYBOARD_W, INP_PRESSED, W_Pressed);
+InputHandling.BindInputAction(INP_KEYBOARD_W, INP_RELEASED, W_Released);
+</code></pre>
+        </figure>
+
+        <h3>Meshes and Lights</h3>
+
+        <p>
+            Meshes and Lights can be created, and added to their respective scene array. I should have used some kind of class to represent the scene, but I stuck with just having
+            different shared pointer arrays for holding different entities in the scene, to reduce complexity.
+        </p>
+
+        <h4>Meshes</h4>
+        <p>
+            Meshes can be created either by directly specifying out the vertices and UV values of the texture, or by importing with Assimp library. The logic for load model
+            was pretty hard, but I managed to do it. When we import a scene using Assimp, we need to recursively load all the nodes(parent-child attached meshes), and get the
+            vertex and material data from each of the mesh and then create the mesh. For direct creation using vertex data, we can directly call CreateMesh passing the vertices
+            and the UV values in the correct 1 dimensional array format.
+        </p>
+
+        <figure class="code">
+            <figcaption>Meshes</figcaption>
+<pre><code class="language-cpp">// Create Mesh function that constructs the mesh
+void Mesh::CreateMesh(GLfloat* Vertices, unsigned int* Indices, unsigned int VertexNum, unsigned int IndicesNum)
+{
+    MeshIndexCount = IndicesNum;
+
+    // Generating a VAO and then binding it
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+
+    glGenBuffers(1, &IBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices[0]) * IndicesNum, Indices, GL_STATIC_DRAW);
+
+    // PRETTY BIG FUNCTION, OMITTED THE REST
+    //...
+}
+
+// Load Model Logic - simplified and omitted
+void PrimitiveMesh::LoadModel(const std::string& FileName)
+{
+    Assimp::Importer Importer;
+    const aiScene* Scene = Importer.ReadFile(FileName, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_GenSmoothNormals | aiProcess_JoinIdenticalVertices);
+
+    // Call the Recursive function Load Node which loads all the nodes (Parent Child Tree)
+    // All the nodes and their respective mesh will be loaded
+    LoadNode(Scene->mRootNode, Scene);
+
+    // Load the Textures
+    LoadMaterials(Scene);
+}
+</code></pre>
+        </figure>
+
+        <h4>Lights</h4>
+        <p>
+            There are different two types of light, each requiring their own shader for calculating shadows
+        </p>
+        <ul>
+            <li>Directional Light</li>
+            <li>Omni-Directional Light (PointLight, SpotLight)</li>
+        </ul>
+        <p>
+            Each light is a class, and have some properties. These properties are used by the shaders to calculate the lighting, rendering the ShadowMap texture etc.
+            The properties include location, direction(for directional light), diffuse intensity, ambient intensity, diffuse color, ambient color, exponent, linear and constant
+            values, edge angle for the Phong Lighting model to control the specular, light spread etc. Below is the constructor of different light functions initializing its
+            properties which can be updated during runtime.
+        </p>
+
+        <figure class="code">
+            <figcaption>Lights</figcaption>
+<pre><code class="language-cpp">// Direction Light
+DirectionalLight(GLsizei ShadowMapBufferWidth, GLsizei ShadowMapBufferHeight, GLfloat AmbientLightIntensity,
+    glm::vec3 AmbientColor, GLfloat DiffuseLightIntensity, glm::vec3 DiffuseColor, glm::vec3 LightDirection);
+
+// Point Light
+PointLight(GLsizei ShadowBufferWidth, GLsizei ShadowBufferHeight, glm::vec3 DiffuseColor, glm::vec3 AmbientColor, GLfloat AmbientLightIntensity,
+    GLfloat DiffuseLightIntensity, glm::vec3 LightLocation,  GLfloat ExponentValue, GLfloat LinearValue, GLfloat ConstantValue);
+
+// Spot Light
+SpotLight(GLfloat ShadowBufferWidth, GLfloat ShadowBufferHeight, glm::vec3 DiffuseColor, glm::vec3 AmbientColor, GLfloat AmbientLightIntensity,
+    GLfloat DiffuseLightIntensity, glm::vec3 LightLocation, glm::vec3 LightDirection, GLfloat ExponentValue, GLfloat LinearValue,
+    GLfloat ConstantValue, GLfloat EdgeAngle);
+</code></pre>
+        </figure>
+
+        <h3>Shaders</h3>
+
+        <p>
+            There are totally 4 sets of shaders in the project, each for different purpose
+        </p>
+        <ol>
+            <li>Main Shader [vertex,fragment]</li>
+            <li>Directional Shadow Map Shader [vertex,fragment]</li>
+            <li>Omni-Directional Shadow Map Shader [vertex,fragment,geometry]</li>
+            <li>Sky Box [vertex, fragment]</li>
+        </ol>
+
+        <h4>Main Shader</h4>
+        <p>
+            The vertex shader transforms vertex positions to clip space, computes positions in light space for shadows, and passes UV coordinates and
+            normals to the fragment shader. It adjusts normals using the inverse transpose of the model matrix and calculates world-space vertex positions for lighting.
+        </p>
+
+        <p>
+            The fragment shader performs the lighting pass the scene, taking into account multiple light types, including directional,
+            point, and spotlights, along with detailed shadow mapping. It calculates the color of each fragment by blending ambient, diffuse, and specular lighting,
+            taking into account the effects of texture mapping and shadows. The shader leverages both directional and omnidirectional shadow mapping, ensuring that
+            shadows from all light types are accurately represented, with additional support for soft shadows using <strong>Percentage Closer Filtering (PCF)</strong>
+            for smoother, more realistic shadow edges. It also handles light attenuation for point and spotlights, reducing the light's intensity over distance to mimic realistic
+            falloff. This shader is highly optimized for complex lighting scenarios, allowing for multiple dynamic lights to cast shadows and interact with surfaces in
+            a physically plausible way, making it ideal for sophisticated real-time rendering in 3D applications.
+        </p>
+
+        <figure class="code">
+            <figcaption>Main Vertex and Fragment Shader</figcaption>
+<pre><code class="language-cpp">// Vertex shader
+void main()
+{
+    gl_Position = Projection * View * Model * vec4(pos, 1.f);
+    DirectionalLightSpacePosition = DirectionalLightTransform * Model * vec4(pos, 1.f);
+    TextCoord = TextUV;
+    VertexNormal = mat3(transpose(inverse(Model))) * InterpedVertexNormal;
+
+    FragmentPosition = (Model * vec4(pos, 1.f)).xyz;
+}
+
+// Fragment Shader
+void main()
+{
+    vec4 FinalColor = CalculateDirectionalLight() + CalculatePointLights() + CalculateSpotLights();
+
+    color = texture(Texture2D, TextCoord) * FinalColor;
+}
+</code></pre>
+        </figure>
+
+        <h4>Other Shaders</h4>
+
+        <p>
+            <strong>Directional Shadow Map Shader</strong>
+            - This vertex shader transforms vertex positions from model space to light space using the model and directional light transformation matrices.
+            It calculates the position of each vertex from the perspective of the light, preparing it for shadow mapping.
+        </p>
+
+        <p>
+            <strong>Omni-Directional Shadow Map Shader</strong>
+            - The shader code includes a vertex shader that transforms vertex positions from model space to clip space using the model matrix, a fragment shader
+            that calculates and normalizes the distance from the fragment to a light source for depth mapping, and a geometry shader that projects geometry onto all
+            six faces of a cubemap using different light matrices, emitting triangles for shadow mapping on each face of the cubemap.
+        </p>
+
+        <p>
+            <strong>SkyBox Shader</strong>
+            - The vertex shader transforms vertex positions from model space to clip space using the projection and view matrices, and passes the position as texture coordinates
+            to the fragment shader. The fragment shader samples and outputs the color from a cubemap texture using the provided texture coordinates, rendering a skybox effect.
+        </p>
+
+        <h3>Game Loop</h3>
+
+        <p>
+            The game loop is abstracted well and it does the following
+        </p>
+        <ol>
+            <li>Calculate Delta Time</li>
+            <li>Handle and Update Input</li>
+            <li>Render Passes</li>
+            <li>Swap the buffer with the latest render</li>
+        </ol>
+
+        <p>
+            The render passes does most of the stuff, rendering every mesh and models with the lights which can be dynamic every loop, capturing and
+            updating the ShadowMaps, drawing the skybox etc.
+        </p>
+
+        <figure class="code">
+            <figcaption>main.cpp</figcaption>
+<pre><code class="language-cpp">while (bGameLoop)
+{
+    //Update the Delta Time
+    UpdateDeltaTime();
+
+    // Input
+    InputHandling.UpdateKeyboardStates(SDL_GetKeyboardState(NULL));
+    InputHandling.InputHandling(&bGameLoop);
+    MainCamera.CameraInput(InputHandling.GetKeyboardAxisValues(), InputHandling.GetMouseRelativeChange(), InputHandling.GetMouseStates(), DeltaTime);
+
+    /* [Render Passes] */
+    DirectionalShadowMapRenderPass(MainDirectionalLight);
+    for (size_t i = 0; i < PointLightCount; i++)
+    {
+        OmniDirectionalShadowMapRenderPass(PointLights[i]);
+    }
+    for (size_t i = 0; i < SpotLightCount; i++)
+    {
+        OmniDirectionalShadowMapRenderPass(SpotLights[i]);
+    }
+    RenderPass(MainDirectionalLight);
+
+    glUseProgram(0);
+    Window.SwapBuffers();
+}
+</code></pre>
+        </figure>
+
+        <h2>Conclusion</h2>
+
+        <p>
+            I learned so much working on this project, only after learning about graphics from
+            <a href="https://www.youtube.com/@cem_yuksel" target="_blank" rel="noopener noreferrer">Cem Yuksel</a>
+            and writing this engine, I was effectively able to right shaders in
+            Unreal Engine with full understanding of what is happening. It gave me an understanding of so many things I was always curious about and I loved every minute of working on this
+            project. This project led me to get interested in learning more about game engine, I started reading the book "Game Engine Architecture" by Jason Gregory. It also made me
+            realize I need to learn more about design patters, low level optimization, project structuring, advanced abstraction, macros etc.
+        </p>
+    </article>
+
+    <project-nav></project-nav>
+</main>
+
+<site-footer></site-footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+</html>

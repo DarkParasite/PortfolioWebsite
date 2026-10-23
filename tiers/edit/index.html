@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tier List Editor - Rishi Khanna</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/assets/icons/d20-favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/output.css">
+    <script src="/src/javascript/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
+    <script src="/src/javascript/tiers.js"></script>
+    <script src="/src/javascript/tier-editor.js" defer></script>
+</head>
+<body>
+
+<site-header></site-header>
+
+<!-- No secrets on this page. The password is checked by the Worker (/worker), which does all the saving. -->
+<main>
+
+    <!-- Loading -->
+    <section id="loading" class="container-narrow py-24 text-center font-mono text-sm text-gray-500">
+        <i class="fa-solid fa-circle-notch fa-spin mr-1"></i> loading…
+    </section>
+
+    <!-- Login -->
+    <section id="login" class="container-narrow py-16 hidden">
+        <form class="panel max-w-sm mx-auto p-6 md:p-8">
+            <p class="font-mono text-sm text-gray-400 mb-1">$ sudo tiers --edit</p>
+            <h1 class="text-2xl font-bold">Tier List Editor</h1>
+
+            <label class="field-label mt-6" for="password">password</label>
+            <input id="password" type="password" class="input" autocomplete="current-password" required>
+            <p id="login-error" class="text-sm text-red-600 mt-2 hidden"></p>
+
+            <button class="btn w-full mt-4" type="submit">Unlock</button>
+            <a href="/tiers/" class="back-link block mt-5"><i class="fa-solid fa-arrow-left text-xs"></i> back to the tier list</a>
+        </form>
+    </section>
+
+    <!-- Editor -->
+    <section id="editor" class="hidden">
+
+        <div id="toolbar" class="sticky z-30 bg-white border-b border-gray-200 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-3">
+                <p class="font-mono text-sm text-gray-500 hidden sm:block">~/tiers/<span class="text-gray-900">edit</span></p>
+                <p id="status" class="font-mono text-xs flex items-center gap-1.5"></p>
+                <div class="ml-auto flex items-center gap-2">
+                    <a href="#add-panel" class="btn-ghost lg:hidden" title="Add games"><i class="fa-solid fa-plus text-xs"></i></a>
+                    <a href="/tiers/" target="_blank" class="btn-ghost" title="Open the live page"><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i><span class="hidden sm:inline">live</span></a>
+                    <button id="revert" type="button" class="btn-ghost" title="Discard unsaved changes"><i class="fa-solid fa-rotate-left text-xs"></i><span class="hidden sm:inline">revert</span></button>
+                    <button id="logout" type="button" class="btn-ghost" title="Log out"><i class="fa-solid fa-right-from-bracket text-xs"></i></button>
+                    <button id="save" type="button" class="btn whitespace-nowrap" title="Save (Ctrl+S)"><i class="fa-solid fa-floppy-disk mr-1"></i>Save</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 py-6 grid lg:grid-cols-[minmax(0,1fr),22rem] gap-6 items-start">
+
+            <div class="min-w-0">
+                <details class="panel shadow-md px-4 py-3">
+                    <summary class="font-mono text-sm text-gray-600 cursor-pointer select-none">page text <span class="text-gray-400">// title and intro</span></summary>
+                    <div class="grid gap-3 mt-3">
+                        <div>
+                            <label class="field-label" for="page-title">title</label>
+                            <input id="page-title" class="input" maxlength="80">
+                        </div>
+                        <div>
+                            <label class="field-label" for="page-intro">intro</label>
+                            <textarea id="page-intro" class="input" rows="3" maxlength="1000"></textarea>
+                        </div>
+                    </div>
+                </details>
+
+                <div id="board" class="tier-board mt-4"></div>
+                <button id="add-tier" type="button" class="btn-ghost mt-3"><i class="fa-solid fa-plus text-xs"></i> add tier</button>
+
+                <div class="unranked-tray mt-6">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <h2 class="font-semibold">Unranked</h2>
+                        <span class="font-mono text-xs text-gray-400">// not shown on the site</span>
+                    </div>
+                    <div id="unranked" class="tier-items editable" data-list="unranked"></div>
+                </div>
+
+                <p class="font-mono text-xs text-gray-500 mt-4">// drag covers to move them · click a cover to edit · click a tier label to rename or recolor · drag <i class="fa-solid fa-grip-vertical"></i> to reorder tiers</p>
+            </div>
+
+            <!-- Add games -->
+            <aside id="add-panel" class="panel p-4 lg:sticky scroll-mt-32">
+                <div class="flex items-center justify-between gap-2">
+                    <h2 class="font-semibold">Add games</h2>
+                    <div class="flex gap-1.5">
+                        <button type="button" class="chip active" data-tab="search">search</button>
+                        <button type="button" class="chip" data-tab="custom">custom</button>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 mt-3">
+                    <label for="add-target" class="font-mono text-xs text-gray-500 shrink-0">add to</label>
+                    <select id="add-target" class="input py-1"></select>
+                </div>
+
+                <div data-panel="search" class="mt-3">
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-gray-400"></i>
+                        <input id="search" type="search" class="input pl-8" placeholder="Search IGDB, e.g. hollow knight" autocomplete="off">
+                    </div>
+                    <div id="results" class="mt-3"></div>
+                </div>
+
+                <form data-panel="custom" class="mt-3 hidden space-y-3" id="custom-form">
+                    <p class="text-sm text-gray-600">For games IGDB doesn't have, or to use your own cover.</p>
+                    <div>
+                        <label class="field-label" for="custom-name">name</label>
+                        <input id="custom-name" class="input" required maxlength="120">
+                    </div>
+                    <div>
+                        <label class="field-label" for="custom-year">year</label>
+                        <input id="custom-year" class="input" type="number" min="1950" max="2100" placeholder="optional">
+                    </div>
+                    <div>
+                        <span class="field-label">cover</span>
+                        <div class="flex gap-3">
+                            <div id="custom-preview" class="cover w-20 shrink-0"></div>
+                            <div class="flex-1 min-w-0 space-y-2">
+                                <label class="btn-ghost w-full"><i class="fa-solid fa-upload text-xs"></i> upload image
+                                    <input id="custom-file" type="file" accept="image/*" class="hidden">
+                                </label>
+                                <input id="custom-url" class="input" type="url" placeholder="or paste an image URL">
+                                <p class="font-mono text-[11px] text-gray-400">cropped to 3:4 and saved to the repo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn w-full"><i class="fa-solid fa-plus mr-1"></i>Add game</button>
+                </form>
+            </aside>
+        </div>
+    </section>
+</main>
+
+<!-- Edit a game -->
+<dialog id="game-dialog" class="modal">
+    <form method="dialog" class="p-5">
+        <div class="flex items-center justify-between mb-4">
+            <p class="font-mono text-sm text-gray-400">$ edit game</p>
+            <button type="button" data-close class="text-gray-400 hover:text-gray-900" aria-label="Close"><i class="fa-solid fa-xmark text-lg"></i></button>
+        </div>
+        <div class="grid sm:grid-cols-[9rem,1fr] gap-5">
+            <div>
+                <div id="gd-cover" class="cover w-28 sm:w-full mx-auto shadow-md"></div>
+                <label class="btn-ghost w-full mt-3 text-xs"><i class="fa-solid fa-upload"></i> new cover
+                    <input id="gd-file" type="file" accept="image/*" class="hidden">
+                </label>
+                <input id="gd-url" class="input mt-2 text-xs" type="url" placeholder="or image URL ↵">
+            </div>
+            <div class="space-y-3 min-w-0">
+                <div>
+                    <label class="field-label" for="gd-name">name</label>
+                    <input id="gd-name" class="input" required maxlength="120">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="field-label" for="gd-year">year</label>
+                        <input id="gd-year" class="input" type="number" min="1950" max="2100">
+                    </div>
+                    <div>
+                        <label class="field-label" for="gd-tier">tier</label>
+                        <select id="gd-tier" class="input"></select>
+                    </div>
+                </div>
+                <div>
+                    <label class="field-label" for="gd-note">note <span class="text-gray-400">// shown when someone clicks the cover</span></label>
+                    <textarea id="gd-note" class="input" rows="4" maxlength="2000" placeholder="Why it's in this tier…"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center justify-between mt-5 pt-4 border-t border-gray-200">
+            <button type="button" id="gd-delete" class="btn-danger"><i class="fa-solid fa-trash-can text-xs"></i> remove game</button>
+            <div class="flex gap-2">
+                <button type="button" data-close class="btn-ghost">cancel</button>
+                <button type="submit" class="btn">Done</button>
+            </div>
+        </div>
+    </form>
+</dialog>
+
+<!-- Edit a tier -->
+<dialog id="tier-dialog" class="modal max-w-sm">
+    <form method="dialog" class="p-5 space-y-4">
+        <div class="flex items-center justify-between">
+            <p class="font-mono text-sm text-gray-400">$ edit tier</p>
+            <button type="submit" class="text-gray-400 hover:text-gray-900" aria-label="Close"><i class="fa-solid fa-xmark text-lg"></i></button>
+        </div>
+        <div class="grid grid-cols-[5rem,1fr] gap-3">
+            <div>
+                <label class="field-label" for="td-label">label</label>
+                <input id="td-label" class="input text-center font-bold" maxlength="12" required>
+            </div>
+            <div>
+                <label class="field-label" for="td-caption">caption <span class="text-gray-400">// optional</span></label>
+                <input id="td-caption" class="input" maxlength="40" placeholder="e.g. masterpieces">
+            </div>
+        </div>
+        <div>
+            <span class="field-label">color</span>
+            <div id="td-swatches" class="flex flex-wrap items-center gap-1.5"></div>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+            <button type="button" id="td-delete" class="btn-danger"><i class="fa-solid fa-trash-can text-xs"></i> delete tier</button>
+            <button type="submit" class="btn">Done</button>
+        </div>
+    </form>
+</dialog>
+
+<div id="toast" class="toast" role="status"></div>
+
+</body>
+</html>

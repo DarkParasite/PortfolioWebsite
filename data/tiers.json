@@ -1,0 +1,137 @@
+{
+  "title": "Game Tier List",
+  "intro": "Games I've played, ranked.",
+  "tiers": [
+    {
+      "caption": "",
+      "id": "s",
+      "label": "S",
+      "color": "#ff7f7f",
+      "games": [
+        {
+          "id": "sekiro-shadows-die-twice-5954",
+          "name": "Sekiro: Shadows Die Twice",
+          "year": 2019,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2a23.jpg",
+          "igdb": 76882
+        },
+        {
+          "id": "clair-obscur-expedition-33-7bef",
+          "name": "Clair Obscur: Expedition 33",
+          "year": 2025,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9gam.jpg",
+          "igdb": 305152
+        },
+        {
+          "id": "half-life-2-a6cd",
+          "name": "Half-Life 2",
+          "year": 2004,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1nmw.jpg",
+          "igdb": 233
+        },
+        {
+          "id": "portal-72b8",
+          "name": "Portal",
+          "year": 2007,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coay61.jpg",
+          "igdb": 71
+        },
+        {
+          "id": "portal-2-7283",
+          "name": "Portal 2",
+          "year": 2011,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rs4.jpg",
+          "igdb": 72
+        },
+        {
+          "id": "outer-wilds-7b5e",
+          "name": "Outer Wilds",
+          "year": 2019,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co65ac.jpg",
+          "igdb": 11737
+        }
+      ]
+    },
+    {
+      "caption": "",
+      "id": "a",
+      "label": "A",
+      "color": "#ffbf7f",
+      "games": [
+        {
+          "id": "elden-ring-39c1",
+          "name": "Elden Ring",
+          "year": 2022,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4jni.jpg",
+          "igdb": 119133
+        },
+        {
+          "id": "bioshock-infinite-2503",
+          "name": "BioShock Infinite",
+          "year": 2013,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2n12.jpg",
+          "igdb": 538
+        },
+        {
+          "id": "the-forgotten-city-1106",
+          "name": "The Forgotten City",
+          "year": 2021,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3muu.jpg",
+          "igdb": 103320
+        },
+        {
+          "id": "returnal-db20",
+          "name": "Returnal",
+          "year": 2021,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wc1.jpg",
+          "igdb": 134584
+        },
+        {
+          "id": "furi-50b1",
+          "name": "Furi",
+          "year": 2016,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobkn1.jpg",
+          "igdb": 17026
+        }
+      ]
+    },
+    {
+      "caption": "",
+      "id": "b",
+      "label": "B",
+      "color": "#ffdf7f",
+      "games": [
+        {
+          "id": "black-myth-wukong-7875",
+          "name": "Black Myth: Wukong",
+          "year": 2024,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8h3y.jpg",
+          "igdb": 136879
+        }
+      ]
+    },
+    {
+      "caption": "",
+      "id": "c",
+      "label": "C",
+      "color": "#ffff7f",
+      "games": []
+    },
+    {
+      "caption": "",
+      "id": "d",
+      "label": "D",
+      "color": "#bfff7f",
+      "games": []
+    },
+    {
+      "caption": "",
+      "id": "f",
+      "label": "F",
+      "color": "#7fbfff",
+      "games": []
+    }
+  ],
+  "unranked": [],
+  "updated": "2026-10-23T06:21:13.068Z"
+}

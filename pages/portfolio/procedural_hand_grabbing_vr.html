@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedural Hand Grabbing in VR - Rishi Khanna</title>
+    <meta name="description" content="Fingers of the VR Hand Mesh snaps to the dynamic shape of the object grabbed.">
+    <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/assets/icons/d20-favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/output.css">
+    <script src="/src/javascript/scripts.js"></script>
+    <script src="/src/javascript/projects.js"></script>
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="container-narrow py-10">
+    <project-header></project-header>
+
+    <article class="panel doc p-6 md:p-10 mt-8">
+
+        <h2>Description and Showcase</h2>
+
+        <p>
+            Normally when an object is grabbed in Unreal Engine, it's just attached to the HandMesh as a child actor. So, I have implemented procedural finger placement
+            on the surface hit when traced from the finger. I added a <strong>spline</strong> from the location where the fingertip is present
+            when the hand is opened to the location where the fingertip goes when the hand is closed. Then I trace along the spine in steps of length. If something is
+            blocking the trace then we have a surface, so get the Time(in spline terms) of the location in the spline and use that as blend weight to blend the HandOpen
+            and HandClose animation for each finger. Do that for all 10 fingers and the finger perfectly snaps to the dynamic object.
+        </p>
+
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/GMmqpIMrLeg?si=hvwcuIu4qny2fsmE" title="Procedural Hand Grabbing in VR - Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h2>Key Features and Mechanics</h2>
+
+        <ul class="features">
+            <li>Spline based tracing to find finger placement</li>
+            <li>Blending Animation for each finger</li>
+        </ul>
+    </article>
+
+    <project-nav></project-nav>
+</main>
+
+<site-footer></site-footer>
+
+</body>
+</html>

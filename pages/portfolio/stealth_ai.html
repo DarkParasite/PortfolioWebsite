@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stealth AI - Rishi Khanna</title>
+    <meta name="description" content="AI mechanics like patrolling, detection, searching, taking hostage, melee combat, finding and switching cover etc.">
+    <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/assets/icons/d20-favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/output.css">
+    <script src="/src/javascript/scripts.js"></script>
+    <script src="/src/javascript/projects.js"></script>
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="container-narrow py-10">
+    <project-header></project-header>
+
+    <article class="panel doc p-6 md:p-10 mt-8">
+
+        <h2>Description and Showcase</h2>
+
+        <p>
+            I worked on this project for a client in Fiverr. It has so many AI mechanics implemented with
+            <strong>AI Perception, Behaviour Trees, Blackboard, EQS, Tasks</strong> and other AI related features from Unreal Engine. Since many number of AI will
+            be at the scene in a given time, many data calculated by AI is shared between them through a common interface manager, optimizing the performance. There are so many
+            features I have listed them below.
+        </p>
+
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/zWvAYRGYAPU?si=TviNgnDBkeXk-043" title="Stealth AI - Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h2>Key Features and Mechanics</h2>
+
+        <ul class="features">
+            <li>Patrolling (Single, Ping-Pong and Loop)</li>
+            <li>Custom Patrol Points and Wait Times </li>
+            <li>Detecting Player with Detection Meter</li>
+            <li>AI search player if half detected</li>
+            <li>Taking AI hostage</li>
+            <li>Kill hostage or call out other enemies</li>
+            <li>AI Noise Detection</li>
+            <li>AI tries to look and flush player on hearing noise</li>
+            <li>Melee Combat with Combat Mechanics</li>
+            <li>AI generating and sharing Cover Points</li>
+            <li>Move between Cover Points and Fire at Player</li>
+            <li>Coordination between AI to Switch Covers</li>
+            <li>AI Throw Grenade</li>
+            <li>AI Requesting and Tossing Ammo</li>
+            <li>AI Sneaking up on Player for Melee Combat</li>
+            <li>Knock down AI</li>
+            <li>Knocked AI fire at player with HandGun</li>
+            <li>AI reviving AI</li>
+            <li>AI calling out death of other AI</li>
+            <li>AI commit suicide</li>
+            <li>AI managing common interface</li>
+            <li>AI groups for different area in game</li>
+        </ul>
+    </article>
+
+    <project-nav></project-nav>
+</main>
+
+<site-footer></site-footer>
+
+</body>
+</html>
