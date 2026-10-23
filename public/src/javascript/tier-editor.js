@@ -2,10 +2,10 @@
 // This page holds no secrets. It sends your password to the Worker in /worker, which checks it, searches IGDB,
 // and commits the tier list to GitHub. Without a valid session the Worker refuses everything, so the page being public is fine.
 
-// The Worker's URL. After deploying it (worker/README.md), paste the URL wrangler prints here.
+// The Worker's URL (printed by `npx wrangler deploy` in /worker). On localhost, `npm run dev` there serves it on 8787.
 const API_URL = ['localhost', '127.0.0.1'].includes(location.hostname)
     ? 'http://localhost:8787'
-    : 'https://tier-list-api.REPLACE-ME.workers.dev';
+    : 'https://tier-list-api.rishikhanna.workers.dev';
 
 const SESSION_KEY = 'tiers.session';
 const COVER_W = 528, COVER_H = 748; // uploaded covers: 2x IGDB's t_cover_big
