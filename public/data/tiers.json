@@ -1,6 +1,6 @@
 {
   "title": "Game Tier List",
-  "intro": "Games I've played, ranked.",
+  "intro": "Games I've played, ranked. Biased to how much enjoyed it and how much it taught me. ",
   "tiers": [
     {
       "caption": "",
@@ -1084,7 +1084,77 @@
       "year": 2017,
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co21c5.jpg",
       "igdb": 36952
+    },
+    {
+      "id": "baldur-s-gate-iii-9545",
+      "name": "Baldur's Gate III",
+      "year": 2023,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co670h.jpg",
+      "igdb": 119171
+    },
+    {
+      "id": "twelve-minutes-9fdb",
+      "name": "Twelve Minutes",
+      "year": 2021,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co77xc.jpg",
+      "igdb": 16612
+    },
+    {
+      "id": "kingdom-come-deliverance-f662",
+      "name": "Kingdom Come: Deliverance",
+      "year": 2018,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4aqi.jpg",
+      "igdb": 4843
+    },
+    {
+      "id": "the-beginner-s-guide-2a92",
+      "name": "The Beginner's Guide",
+      "year": 2015,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2rz1.jpg",
+      "igdb": 13212
+    },
+    {
+      "id": "ghost-of-tsushima-3f98",
+      "name": "Ghost of Tsushima",
+      "year": 2020,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2crj.jpg",
+      "igdb": 75235
+    },
+    {
+      "id": "orcs-must-die-3-d2b8",
+      "name": "Orcs Must Die! 3",
+      "year": 2020,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co52n8.jpg",
+      "igdb": 121754
+    },
+    {
+      "id": "inscryption-1d8f",
+      "name": "Inscryption",
+      "year": 2021,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co401c.jpg",
+      "igdb": 139090
+    },
+    {
+      "id": "paladins-4ba6",
+      "name": "Paladins",
+      "year": 2017,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cocsmo.jpg",
+      "igdb": 11544
+    },
+    {
+      "id": "the-blood-of-dawnwalker-adab",
+      "name": "The Blood of Dawnwalker",
+      "year": 2026,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob7ym.jpg",
+      "igdb": 282831
+    },
+    {
+      "id": "devour-75c9",
+      "name": "Devour",
+      "year": 2021,
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co69f8.jpg",
+      "igdb": 139708
     }
   ],
-  "updated": "2026-10-23T06:21:13.068Z"
+  "updated": "2026-10-26T07:26:43.587Z"
 }
