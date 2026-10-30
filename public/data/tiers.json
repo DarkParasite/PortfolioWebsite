@@ -484,6 +484,13 @@
           "year": 2017,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cocsmo.jpg",
           "igdb": 11544
+        },
+        {
+          "id": "hellblade-senua-s-sacrifice-1275",
+          "name": "Hellblade: Senua's Sacrifice",
+          "year": 2017,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7l.jpg",
+          "igdb": 7603
         }
       ]
     },
@@ -674,6 +681,13 @@
           "year": 2019,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cocqh2.jpg",
           "igdb": 114795
+        },
+        {
+          "id": "hades-61dd",
+          "name": "Hades",
+          "year": 2020,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9kr.jpg",
+          "igdb": 113112
         },
         {
           "id": "devour-75c9",
@@ -1047,5 +1061,5 @@
       "igdb": 478
     }
   ],
-  "updated": "2026-10-30T16:02:23.774Z"
+  "updated": "2026-10-30T16:04:49.629Z"
 }
