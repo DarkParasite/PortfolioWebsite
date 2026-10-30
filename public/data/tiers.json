@@ -3,7 +3,7 @@
   "intro": "Games I've completed, ranked. Biased to how much enjoyed it and how much it taught me. ",
   "tiers": [
     {
-      "caption": "",
+      "caption": "MASTERPIECES",
       "id": "s",
       "label": "S",
       "color": "#ff7f7f",
@@ -58,13 +58,6 @@
           "igdb": 11737
         },
         {
-          "id": "assassin-s-creed-ii-ff27",
-          "name": "Assassin's Creed II",
-          "year": 2009,
-          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcf.jpg",
-          "igdb": 127
-        },
-        {
           "id": "far-cry-3-c196",
           "name": "Far Cry 3",
           "year": 2012,
@@ -98,11 +91,18 @@
           "year": 2015,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2rz1.jpg",
           "igdb": 13212
+        },
+        {
+          "id": "assassin-s-creed-brotherhood-e3f0",
+          "name": "Assassin's Creed Brotherhood",
+          "year": 2010,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cocdky.jpg",
+          "igdb": 113
         }
       ]
     },
     {
-      "caption": "",
+      "caption": "Memorable and Fun",
       "id": "a",
       "label": "A",
       "color": "#ffbf7f",
@@ -129,6 +129,13 @@
           "igdb": 134584
         },
         {
+          "id": "assassin-s-creed-ii-ff27",
+          "name": "Assassin's Creed II",
+          "year": 2009,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcf.jpg",
+          "igdb": 127
+        },
+        {
           "id": "furi-50b1",
           "name": "Furi",
           "year": 2016,
@@ -141,13 +148,6 @@
           "year": 2007,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rrw.jpg",
           "igdb": 128
-        },
-        {
-          "id": "assassin-s-creed-brotherhood-e3f0",
-          "name": "Assassin's Creed Brotherhood",
-          "year": 2010,
-          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cocdky.jpg",
-          "igdb": 113
         },
         {
           "id": "assassin-s-creed-iii-fd8f",
@@ -481,7 +481,7 @@
       ]
     },
     {
-      "caption": "",
+      "caption": "Fun to play",
       "id": "b",
       "label": "B",
       "color": "#ffdf7f",
@@ -681,11 +681,18 @@
           "year": 2026,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob7ym.jpg",
           "igdb": 282831
+        },
+        {
+          "id": "life-is-strange-3678",
+          "name": "Life Is Strange",
+          "year": 2015,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r8e.jpg",
+          "igdb": 7599
         }
       ]
     },
     {
-      "caption": "",
+      "caption": "Not Memorable",
       "id": "c",
       "label": "C",
       "color": "#ffff7f",
@@ -766,39 +773,11 @@
           "year": 2014,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2npa.jpg",
           "igdb": 6801
-        },
-        {
-          "id": "just-cause-5f24",
-          "name": "Just Cause",
-          "year": 2006,
-          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co23af.jpg",
-          "igdb": 1042
-        },
-        {
-          "id": "life-is-strange-3678",
-          "name": "Life Is Strange",
-          "year": 2015,
-          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r8e.jpg",
-          "igdb": 7599
-        },
-        {
-          "id": "medal-of-honor-6c29",
-          "name": "Medal of Honor",
-          "year": 2010,
-          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3jhe.jpg",
-          "igdb": 556
-        },
-        {
-          "id": "medal-of-honor-warfighter-0ec9",
-          "name": "Medal of Honor: Warfighter",
-          "year": 2012,
-          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2so4.jpg",
-          "igdb": 1306
         }
       ]
     },
     {
-      "caption": "",
+      "caption": "Boring",
       "id": "d",
       "label": "D",
       "color": "#bfff7f",
@@ -816,11 +795,32 @@
           "year": 2011,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2hd4.jpg",
           "igdb": 527
+        },
+        {
+          "id": "medal-of-honor-6c29",
+          "name": "Medal of Honor",
+          "year": 2010,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3jhe.jpg",
+          "igdb": 556
+        },
+        {
+          "id": "medal-of-honor-warfighter-0ec9",
+          "name": "Medal of Honor: Warfighter",
+          "year": 2012,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2so4.jpg",
+          "igdb": 1306
+        },
+        {
+          "id": "just-cause-5f24",
+          "name": "Just Cause",
+          "year": 2006,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co23af.jpg",
+          "igdb": 1042
         }
       ]
     },
     {
-      "caption": "",
+      "caption": "Regret playing",
       "id": "f",
       "label": "F",
       "color": "#7fbfff",
@@ -1040,5 +1040,5 @@
       "igdb": 478
     }
   ],
-  "updated": "2026-10-30T15:54:37.712Z"
+  "updated": "2026-10-30T16:01:43.024Z"
 }
