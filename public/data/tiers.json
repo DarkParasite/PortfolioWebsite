@@ -77,6 +77,20 @@
           "year": 2005,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6b1f.jpg",
           "igdb": 243048
+        },
+        {
+          "id": "baldur-s-gate-iii-9545",
+          "name": "Baldur's Gate III",
+          "year": 2023,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co670h.jpg",
+          "igdb": 119171
+        },
+        {
+          "id": "the-witcher-3-wild-hunt-cb87",
+          "name": "The Witcher 3: Wild Hunt",
+          "year": 2015,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaarl.jpg",
+          "igdb": 1942
         }
       ]
     },
@@ -954,13 +968,6 @@
       "igdb": 36952
     },
     {
-      "id": "baldur-s-gate-iii-9545",
-      "name": "Baldur's Gate III",
-      "year": 2023,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co670h.jpg",
-      "igdb": 119171
-    },
-    {
       "id": "twelve-minutes-9fdb",
       "name": "Twelve Minutes",
       "year": 2021,
@@ -1024,5 +1031,5 @@
       "igdb": 139708
     }
   ],
-  "updated": "2026-10-30T15:46:26.505Z"
+  "updated": "2026-10-30T15:47:53.899Z"
 }
