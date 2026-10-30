@@ -92,6 +92,90 @@
           "year": 2016,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobkn1.jpg",
           "igdb": 17026
+        },
+        {
+          "id": "assassin-s-creed-7ca1",
+          "name": "Assassin's Creed",
+          "year": 2007,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rrw.jpg",
+          "igdb": 128
+        },
+        {
+          "id": "assassin-s-creed-brotherhood-e3f0",
+          "name": "Assassin's Creed Brotherhood",
+          "year": 2010,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cocdky.jpg",
+          "igdb": 113
+        },
+        {
+          "id": "assassin-s-creed-ii-ff27",
+          "name": "Assassin's Creed II",
+          "year": 2009,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcf.jpg",
+          "igdb": 127
+        },
+        {
+          "id": "assassin-s-creed-iii-fd8f",
+          "name": "Assassin's Creed III",
+          "year": 2012,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xii.jpg",
+          "igdb": 1266
+        },
+        {
+          "id": "assassin-s-creed-iv-black-flag-c280",
+          "name": "Assassin's Creed IV Black Flag",
+          "year": 2013,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4qfn.jpg",
+          "igdb": 1970
+        },
+        {
+          "id": "bully-scholarship-edition-c157",
+          "name": "Bully: Scholarship Edition",
+          "year": 2008,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2gvl.jpg",
+          "igdb": 6574
+        },
+        {
+          "id": "call-of-duty-2-ad95",
+          "name": "Call of Duty 2",
+          "year": 2005,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3acf.jpg",
+          "igdb": 622
+        },
+        {
+          "id": "call-of-duty-modern-warfare-2-bf69",
+          "name": "Call of Duty: Modern Warfare 2",
+          "year": 2009,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3cwt.jpg",
+          "igdb": 559
+        },
+        {
+          "id": "call-of-duty-modern-warfare-remastered-b32f",
+          "name": "Call of Duty: Modern Warfare Remastered",
+          "year": 2016,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wla.jpg",
+          "igdb": 24920
+        },
+        {
+          "id": "call-of-duty-ghosts-a1c5",
+          "name": "Call of Duty: Ghosts",
+          "year": 2013,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3b15.jpg",
+          "igdb": 2033
+        },
+        {
+          "id": "command-conquer-red-alert-3-ee45",
+          "name": "Command & Conquer: Red Alert 3",
+          "year": 2008,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3m4l.jpg",
+          "igdb": 959
+        },
+        {
+          "id": "call-of-juarez-bound-in-blood-9afd",
+          "name": "Call of Juarez: Bound In Blood",
+          "year": 2009,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2pn0.jpg",
+          "igdb": 430
         }
       ]
     },
@@ -107,6 +191,41 @@
           "year": 2024,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8h3y.jpg",
           "igdb": 136879
+        },
+        {
+          "id": "alien-isolation-e1cd",
+          "name": "Alien: Isolation",
+          "year": 2014,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1vzu.jpg",
+          "igdb": 4754
+        },
+        {
+          "id": "assassin-s-creed-rogue-f7cd",
+          "name": "Assassin's Creed Rogue",
+          "year": 2014,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xir.jpg",
+          "igdb": 7570
+        },
+        {
+          "id": "battlefield-4-7260",
+          "name": "Battlefield 4",
+          "year": 2013,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1nmf.jpg",
+          "igdb": 1979
+        },
+        {
+          "id": "bulletstorm-8ec0",
+          "name": "Bulletstorm",
+          "year": 2011,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7abq.jpg",
+          "igdb": 494
+        },
+        {
+          "id": "call-of-duty-world-at-war-3bef",
+          "name": "Call of Duty: World at War",
+          "year": 2008,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wl8.jpg",
+          "igdb": 625
         }
       ]
     },
@@ -115,7 +234,43 @@
       "id": "c",
       "label": "C",
       "color": "#ffff7f",
-      "games": []
+      "games": [
+        {
+          "id": "battlefield-bad-company-2-b1f0",
+          "name": "Battlefield: Bad Company 2",
+          "year": 2010,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xbi.jpg",
+          "igdb": 352
+        },
+        {
+          "id": "battlefield-v-bbad",
+          "name": "Battlefield V",
+          "year": 2018,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xbv.jpg",
+          "igdb": 83728
+        },
+        {
+          "id": "blood-knights-86b3",
+          "name": "Blood Knights",
+          "year": 2013,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1uzw.jpg",
+          "igdb": 8421
+        },
+        {
+          "id": "call-of-duty-black-ops-iii-5128",
+          "name": "Call of Duty: Black Ops III",
+          "year": 2015,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co20yw.jpg",
+          "igdb": 9509
+        },
+        {
+          "id": "call-of-juarez-gunslinger-179e",
+          "name": "Call of Juarez: Gunslinger",
+          "year": 2013,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coag64.jpg",
+          "igdb": 1976
+        }
+      ]
     },
     {
       "caption": "",
@@ -148,130 +303,11 @@
       "igdb": 9431
     },
     {
-      "id": "alien-isolation-e1cd",
-      "name": "Alien: Isolation",
-      "year": 2014,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1vzu.jpg",
-      "igdb": 4754
-    },
-    {
-      "id": "assassin-s-creed-7ca1",
-      "name": "Assassin's Creed",
-      "year": 2007,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rrw.jpg",
-      "igdb": 128
-    },
-    {
-      "id": "assassin-s-creed-brotherhood-e3f0",
-      "name": "Assassin's Creed Brotherhood",
-      "year": 2010,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cocdky.jpg",
-      "igdb": 113
-    },
-    {
-      "id": "assassin-s-creed-ii-ff27",
-      "name": "Assassin's Creed II",
-      "year": 2009,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcf.jpg",
-      "igdb": 127
-    },
-    {
-      "id": "assassin-s-creed-iii-fd8f",
-      "name": "Assassin's Creed III",
-      "year": 2012,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xii.jpg",
-      "igdb": 1266
-    },
-    {
-      "id": "assassin-s-creed-iv-black-flag-c280",
-      "name": "Assassin's Creed IV Black Flag",
-      "year": 2013,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4qfn.jpg",
-      "igdb": 1970
-    },
-    {
-      "id": "assassin-s-creed-rogue-f7cd",
-      "name": "Assassin's Creed Rogue",
-      "year": 2014,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xir.jpg",
-      "igdb": 7570
-    },
-    {
-      "id": "assassin-s-creed-unity-6595",
-      "name": "Assassin's Creed Unity",
-      "year": 2014,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xiq.jpg",
-      "igdb": 5606
-    },
-    {
-      "id": "assassin-s-creed-revelations-08d4",
-      "name": "Assassin's Creed Revelations",
-      "year": 2011,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xih.jpg",
-      "igdb": 537
-    },
-    {
-      "id": "assassin-s-creed-origins-0dd8",
-      "name": "Assassin's Creed Origins",
-      "year": 2017,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rbe.jpg",
-      "igdb": 28540
-    },
-    {
-      "id": "assassin-s-creed-odyssey-77d5",
-      "name": "Assassin's Creed Odyssey",
-      "year": 2018,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2nul.jpg",
-      "igdb": 103054
-    },
-    {
-      "id": "assassin-s-creed-valhalla-6a9a",
-      "name": "Assassin's Creed Valhalla",
-      "year": 2020,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ed3.jpg",
-      "igdb": 133004
-    },
-    {
-      "id": "atomic-heart-1d7a",
-      "name": "Atomic Heart",
-      "year": 2023,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co68ag.jpg",
-      "igdb": 76747
-    },
-    {
-      "id": "batman-arkham-asylum-c3e7",
-      "name": "Batman: Arkham Asylum",
-      "year": 2009,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1voj.jpg",
-      "igdb": 500
-    },
-    {
-      "id": "battlefield-bad-company-2-b1f0",
-      "name": "Battlefield: Bad Company 2",
-      "year": 2010,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xbi.jpg",
-      "igdb": 352
-    },
-    {
       "id": "battlefield-3-5937",
       "name": "Battlefield 3",
       "year": 2011,
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xbu.jpg",
       "igdb": 343
-    },
-    {
-      "id": "battlefield-4-7260",
-      "name": "Battlefield 4",
-      "year": 2013,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1nmf.jpg",
-      "igdb": 1979
-    },
-    {
-      "id": "battlefield-v-bbad",
-      "name": "Battlefield V",
-      "year": 2018,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xbv.jpg",
-      "igdb": 83728
     },
     {
       "id": "beowulf-the-game-96b4",
@@ -295,55 +331,6 @@
       "igdb": 34294
     },
     {
-      "id": "blood-knights-86b3",
-      "name": "Blood Knights",
-      "year": 2013,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1uzw.jpg",
-      "igdb": 8421
-    },
-    {
-      "id": "bright-memory-infinite-a443",
-      "name": "Bright Memory: Infinite",
-      "year": 2021,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coapmq.jpg",
-      "igdb": 113739
-    },
-    {
-      "id": "bulletstorm-8ec0",
-      "name": "Bulletstorm",
-      "year": 2011,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7abq.jpg",
-      "igdb": 494
-    },
-    {
-      "id": "bully-scholarship-edition-c157",
-      "name": "Bully: Scholarship Edition",
-      "year": 2008,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2gvl.jpg",
-      "igdb": 6574
-    },
-    {
-      "id": "call-of-duty-2-ad95",
-      "name": "Call of Duty 2",
-      "year": 2005,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3acf.jpg",
-      "igdb": 622
-    },
-    {
-      "id": "call-of-duty-world-at-war-3bef",
-      "name": "Call of Duty: World at War",
-      "year": 2008,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wl8.jpg",
-      "igdb": 625
-    },
-    {
-      "id": "call-of-duty-modern-warfare-2-bf69",
-      "name": "Call of Duty: Modern Warfare 2",
-      "year": 2009,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3cwt.jpg",
-      "igdb": 559
-    },
-    {
       "id": "call-of-duty-black-ops-c976",
       "name": "Call of Duty: Black Ops",
       "year": 2010,
@@ -365,13 +352,6 @@
       "igdb": 1122
     },
     {
-      "id": "call-of-duty-ghosts-a1c5",
-      "name": "Call of Duty: Ghosts",
-      "year": 2013,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3b15.jpg",
-      "igdb": 2033
-    },
-    {
       "id": "call-of-duty-advanced-warfare-d812",
       "name": "Call of Duty: Advanced Warfare",
       "year": 2014,
@@ -379,46 +359,11 @@
       "igdb": 6632
     },
     {
-      "id": "call-of-duty-black-ops-iii-5128",
-      "name": "Call of Duty: Black Ops III",
-      "year": 2015,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co20yw.jpg",
-      "igdb": 9509
-    },
-    {
-      "id": "call-of-duty-modern-warfare-remastered-b32f",
-      "name": "Call of Duty: Modern Warfare Remastered",
-      "year": 2016,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wla.jpg",
-      "igdb": 24920
-    },
-    {
       "id": "call-of-duty-modern-warfare-202d",
       "name": "Call of Duty: Modern Warfare",
       "year": 2019,
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rsg.jpg",
       "igdb": 119177
-    },
-    {
-      "id": "call-of-juarez-bound-in-blood-9afd",
-      "name": "Call of Juarez: Bound In Blood",
-      "year": 2009,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2pn0.jpg",
-      "igdb": 430
-    },
-    {
-      "id": "call-of-juarez-gunslinger-179e",
-      "name": "Call of Juarez: Gunslinger",
-      "year": 2013,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coag64.jpg",
-      "igdb": 1976
-    },
-    {
-      "id": "command-conquer-red-alert-3-ee45",
-      "name": "Command & Conquer: Red Alert 3",
-      "year": 2008,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3m4l.jpg",
-      "igdb": 959
     },
     {
       "id": "command-conquer-remastered-collection-4165",
@@ -1156,5 +1101,5 @@
       "igdb": 139708
     }
   ],
-  "updated": "2026-10-26T07:26:43.587Z"
+  "updated": "2026-10-30T15:39:56.437Z"
 }
