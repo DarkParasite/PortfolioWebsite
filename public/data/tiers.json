@@ -171,6 +171,13 @@
           "igdb": 6574
         },
         {
+          "id": "grand-theft-auto-v-d4b3",
+          "name": "Grand Theft Auto V",
+          "year": 2013,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lbd.jpg",
+          "igdb": 1020
+        },
+        {
           "id": "call-of-duty-2-ad95",
           "name": "Call of Duty 2",
           "year": 2005,
@@ -1040,5 +1047,5 @@
       "igdb": 478
     }
   ],
-  "updated": "2026-10-30T16:01:43.024Z"
+  "updated": "2026-10-30T16:02:23.774Z"
 }
