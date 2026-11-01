@@ -709,6 +709,13 @@
           "year": 2015,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r8e.jpg",
           "igdb": 7599
+        },
+        {
+          "id": "uncharted-4-a-thief-s-end-da09",
+          "name": "Uncharted 4: A Thief's End",
+          "year": 2016,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r7h.jpg",
+          "igdb": 7331
         }
       ]
     },
@@ -857,20 +864,6 @@
     }
   ],
   "unranked": [
-    {
-      "id": "doom-eternal-97a0",
-      "name": "Doom Eternal",
-      "year": 2020,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p5n.jpg",
-      "igdb": 103298
-    },
-    {
-      "id": "dead-space-3-49db",
-      "name": "Dead Space 3",
-      "year": 2013,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2int.jpg",
-      "igdb": 1216
-    },
     {
       "id": "devil-may-cry-4-special-edition-ce66",
       "name": "Devil May Cry 4: Special Edition",
@@ -1052,14 +1045,7 @@
       "year": 2018,
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1vcn.jpg",
       "igdb": 37777
-    },
-    {
-      "id": "the-witcher-2-assassins-of-kings-e4b6",
-      "name": "The Witcher 2: Assassins of Kings",
-      "year": 2011,
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wy4.jpg",
-      "igdb": 478
     }
   ],
-  "updated": "2026-10-30T16:04:49.629Z"
+  "updated": "2026-11-01T06:47:50.404Z"
 }
