@@ -801,6 +801,13 @@
           "year": 2014,
           "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2npa.jpg",
           "igdb": 6801
+        },
+        {
+          "id": "call-of-duty-modern-warfare-4-dd0a",
+          "name": "Call of Duty: Modern Warfare 4",
+          "year": 2026,
+          "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4mu.jpg",
+          "igdb": 403310
         }
       ]
     },
@@ -1047,5 +1054,5 @@
       "igdb": 37777
     }
   ],
-  "updated": "2026-11-01T06:47:50.404Z"
+  "updated": "2026-11-02T07:56:48.482Z"
 }
