@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Royale Game - Rishi Khanna</title>
+    <meta name="description" content="Made from scratch over span of 5 months with more than 40,000 lines of code.">
+    <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/assets/icons/d20-favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/output.css">
+    <script src="/src/javascript/scripts.js"></script>
+    <script src="/src/javascript/projects.js"></script>
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="container-narrow py-10">
+    <project-header></project-header>
+
+    <article class="panel doc p-6 md:p-10 mt-8">
+
+        <h2>Description and Showcase</h2>
+
+        <p>
+            This is a Battle Royale game, I have developed from scratch with over 40,000 lines of code written in C++. I have implemented typical Battle Royale
+            mechanics which includes joining lobby, dropping from aircraft, picking up loot, moving towards the safe zone, and surviving to be the last squad
+            and winning the game. This project helped me get very thorough with Unreal Engine's <strong>Replication System</strong>. Optimization
+            was given top priority, I have ensured to send minimum data across the network to reduce latency, ensuring a smooth gameplay without compromising on
+            quality. I have also implemented <strong>Lag Compensation</strong> techniques such as <strong>Server Side Rewind</strong>
+            and <strong>Client Side Prediction</strong>. It's a full game prototype with complete game loop.
+        </p>
+
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/RNkyLvl2Png?si=c1JHIu0bcG4h9nHK" title="Battle Royale Game - Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h3>Gameplay Video</h3>
+
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/iVs5SxsuLNA?si=gE8MtvOBQsfHIqIo" title="Battle Royale Game - Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h2>Key Features and Mechanics</h2>
+
+        <ul class="features">
+            <li>Replicated Weapon Mechanics</li>
+            <li>Inventory System</li>
+            <li>Armour</li>
+            <li>Hitbox based Weighted Damage</li>
+            <li>Grenade, Smoke Grenade</li>
+            <li>Vaulting</li>
+            <li>Solo, Duo, Trio, Squad</li>
+            <li>Knock Player</li>
+            <li>Revive Player</li>
+            <li>Eliminate Enemy and Team</li>
+            <li>Win/Lose Match</li>
+            <li>Death Box</li>
+            <li>Server Side Rewind</li>
+            <li>Client Side Prediction</li>
+            <li>Blue Zone, Safe Zone</li>
+            <li>Randomly generated Zone and Flight Path</li>
+            <li>Zone Damage and Effects</li>
+            <li>Weighted Random based Loot Generation</li>
+            <li>Jump from Aircraft</li>
+            <li>Skydive, Falling</li>
+            <li>Parachute, Glide</li>
+            <li>MiniMap and FullMap Widgets</li>
+            <li>Steam SDK</li>
+            <li>Create, Join, Configure Sessions</li>
+        </ul>
+
+        <h2>Project Overview</h2>
+
+        <h3>Objective of the Project</h3>
+
+        <p>
+            I enjoy building large, complex projects because they offer more challenges, not only in programming mechanics but also in maintaining a large codebase.
+            I always prioritize careful planning before implementation, ensuring that adding new features in the future will be hassle-free. By taking the time to plan
+            properly and implement mechanics with thorough testing, I was able to deliver a final prototype with minimal issues and no game-breaking bugs.
+            <strong>Decoupling</strong> features into components was crucial for enabling rapid feature additions and making maintenance
+            and testing more efficient.
+        </p>
+
+        <p>
+            This project also made me realize the importance of testing. Spending time to create tools or mechanics for testing proved highly productive and saved a lot of time.
+            I developed a strong interest in testing as it requires innovative solutions to test unique mechanics quickly.
+        </p>
+
+        <p>
+            Optimization was a top priority throughout the project. I designed every system to be as efficient as possible, consuming minimal CPU cycles. I also focused on
+            memory optimization, using appropriate data structures and clearing objects from memory when no longer needed. I carefully selected data types to minimize the
+            amount of data sent over the network, and I found solutions to avoid transmitting unnecessary data.
+        </p>
+
+        <h3>Random Loot Generation</h3>
+
+        <p>
+            Random loot generation is a crucial part in Battle Royale games. After looking through various approaches, I found <strong>Weight Random</strong>
+            choosing to be suitable since it gave more control by taking individual weights and total weight into account.
+        </p>
+
+        <h4>Assigning Weights</h4>
+        <p>
+            Assigning weights was made easy by the use of <strong>DataTables</strong>, so weights can be updated easily by modifying the DataTable, experimenting
+            the Loot Generation is made easy this way. Following are the weights that I use currently.
+        </p>
+
+        <figure>
+            <img src="/assets/images/portfolio/battle_royale/loot_gen_dt.png" alt="[Fig 1] Item Weights DataTables">
+            <figcaption>[Fig 1] Item Weights DataTables</figcaption>
+        </figure>
+
+        <h4>Working</h4>
+        <p>
+            LootSpawnActor is placed all around the map, when the game begins, the server gets all these LootSpawnActors placed in the world. Then based on choosing probability set in
+            the blueprint, it either uses that LootSpawnActor for spawning loot otherwise it just destroys the LootSpawnActor. After that, it determines the number of loot items that
+            need to be spawned in each of the chosen LootSpawnActors randomly ,and it can range upto 1 to 5 items.
+            Next is determining the items to spawn.
+        </p>
+
+        <p>
+            First, <strong>ItemType</strong> such as Ammo, Throwable, Armour, Weapon have weights, which is used to determine what kind of loot to spawn.
+            Once that has been chosen, the next would be to choose the item of the previously chosen type, for which again weights can be found in the DataTable. By doing this,
+            I have balanced the spawn rate of the item based on the necessity of the item in the game.
+        </p>
+
+        <p>
+            After choosing the items to spawn, logic is executed to spawn the chosen items. The LootSpawnActor is a plane, which is divided equally into 4 parts. Each chosen item
+            is randomly spawned in any of the divided part, and placed at random rotation. The reason I have chosen this method is to save the server's CPU time. Since there are 1000s of
+            LootSpawnActors in the world, doing complex calculations and trace testing will be costly. By <strong>profiling</strong> the LootGeneration and spawning
+            I found this method to be best, generating loot and spawning them in <strong>few hundred milliseconds</strong>.
+        </p>
+
+        <p>
+            There is also additional logic, that ensures that when a weapon is spawned, the ammo for the weapons is also spawned along with it.
+        </p>
+
+        <figure>
+            <img src="/assets/images/portfolio/battle_royale/single_loot_spawn.gif" alt="[Fig 2] Random Loot Generation">
+            <figcaption>[Fig 2] Random Loot Generation</figcaption>
+        </figure>
+
+        <h3>Zone and Flight Path Generation</h3>
+
+        <p>
+            Varying the flight path and the zone randomly every game which creates variability in the game. So every match doesn't feel the same. I came up with some solutions to do
+            this effectively and they are highly customizable.
+        </p>
+
+        <h4>Flight Path Generation</h4>
+
+        <p>
+            The flight need to spawn and move from any side of the map to another side which is on the opposite. To achieve this with maximum variability I have used a spline. Here is
+            how the component responsible for generating the flight path works,
+        </p>
+
+        <ul>
+            <li>
+                There is a FlightPathActor, which has a spline with 5 points. The points of the spline need to be placed along the edges of the map, and it
+                should form a closed loop, joining point 4 to point 0. Now we have a closed looped spline around the map.
+            </li>
+            <li>
+                The component responsible for generating the flight path, takes this spline.
+            </li>
+            <li>
+                First it chooses any two consecutive points randomly, for example let's say 1 and 2, which will give us a side of the spline.
+            </li>
+            <li>
+                Next, it finds the opposite spline side by adding 2 to both the spline points [(1 + 2) % 4 = 3] and [(2 + 2) % 4 = 4]. So the other side would be the points 3 and 0.
+            </li>
+            <li>
+                Since it has two opposites sides, it finds any random location along the spline sides.
+            </li>
+            <li>
+                We can simply join these two location to get a flight path.
+            </li>
+        </ul>
+
+        <figure>
+            <img src="/assets/images/portfolio/battle_royale/spline.jpg" alt="[Fig 3] Spline looped around the map">
+            <figcaption>[Fig 3] Spline looped around the map</figcaption>
+        </figure>
+
+        <h4>Random Zone Location</h4>
+        <p>
+            The zone can be completely configured using a DataTable. It is possible to change things like Init delay (generally only set for the first zone), Blue Zone shrink start time,
+            Blue Zone shrink time, Safe Zone diameter, Blue Zone Damage per second.
+        </p>
+
+        <h4>Working</h4>
+        <p>
+            For determining the zone location, we again use the spline. Since the spline is a closed loop around the map, it can be used as bounds and points can be generated inside
+            the bounds. The way it is generated is as follows,
+        </p>
+        <ul>
+            <li>
+                First the spline locations are taken and a polygon is constructed. The spline points are offset inwards to prevent zone clipping out of the map area.
+            </li>
+            <li>
+                Depending on the current zone phase, the zone's diameter is obtained from the DataTable.
+            </li>
+            <li>
+                For the first zone phase, a random point is found inside the polygon.
+            </li>
+            <li>
+                For the other zone phases, we need to find a new circle inside the previous circle that was found, for that we can calculate the radius difference between
+                the zone circle of previous and current phase, and then find a new point in circle created with the radius difference. That circle will surely be enclosed within
+                the previous zone circle.
+            </li>
+        </ul>
+
+        <figure>
+            <img src="/assets/images/portfolio/battle_royale/zone_gen.jpg" alt="[Fig 4] Zone Generation">
+            <figcaption>[Fig 4] Zone Generation</figcaption>
+        </figure>
+
+        <h3>Server Side Rewind</h3>
+        <p>
+            The problem with multiplayer games is that, due to network latency, the time of shooting a bullet and the time this reaches the server for authentication and processing
+            will be different. In low latency scenario, this might not mean much. But even with moderate latency, this can cause some discrepancies such as player getting hit and dying
+            after reaching a cover. To fix this, Server Side Rewind can be used, where the server records data regarding hit boxes of the player in some regular intervals or every frame.
+            So when a player fires a weapon, time of firing the weapon can also be sent along, which can be used to look through the history of the recorded hit box data and test if
+            the shot is a hit or not. Though this can be a good way of ensuring accurate hit based on time, but for very high latency it may not look as intended in the gameplay, so it's
+            best to turn off Server Side Rewind for very high latency.
+        </p>
+
+        <p>
+            Below is how I have implemented Server Side Rewind in my project.
+        </p>
+
+        <ul>
+            <li>
+                Each player has multiple hit boxes which are box and capsule collisions attached to the character mesh.
+            </li>
+            <li>
+                In the server machine, the hit box <strong>Transforms</strong> are recorded each frame and stored in a doubly linked list.
+            </li>
+            <li>
+                It is enough to keep records only for a 4 seconds window, other records can be discarded to save memory.
+            </li>
+            <li>
+                When a client machine sends a weapon fire action along with time of fire to the server, the server can iterate through the doubly linked list on both sides,
+                trying to find a record which was recorded at a time closest to the time of fire of the client.
+            </li>
+            <li>
+                If we exactly find a node with the time of fire equal to the time at which the record was saved, we can use the data in the node. But this is a rare case.
+            </li>
+            <li>
+                If we cannot find an exact match, then with the help of next and previous pointers we can find two nodes, one greater than the time of fire and another less than the
+                time of fire. We can interpolate the data between these nodes to get an approximation of how the hit box would have been at that time.
+            </li>
+            <li>
+                The data in the record would be the hit box transforms which we can trace test to see if the weapon fire is a hit or not.
+            </li>
+            <li>
+                Based on the weapon type, which maybe hit-scan or projectile, relevant trace test is performed by moving the hit boxes to the Transforms stored in the record and performing
+                the test, to determine if it's a hit or not.
+            </li>
+        </ul>
+        <p>
+            In the below image, a projectile weapon is fired. We can see the green sphere which is a projectile trace, tested against a record that was found based on the time sent
+            from the client. The chosen record is debugged and player is hidden for understanding.
+        </p>
+
+        <figure>
+            <img src="/assets/images/portfolio/battle_royale/ssr_hitbox.jpg" alt="[Fig 5] Record at time of hit Debugged">
+            <figcaption>[Fig 5] Record at time of hit Debugged</figcaption>
+        </figure>
+    </article>
+
+    <project-nav></project-nav>
+</main>
+
+<site-footer></site-footer>
+
+</body>
+</html>

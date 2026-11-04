@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Rebuild after editing:  npm run build:css  (or  npm run watch:css  while working) */
+
+@layer base {
+    body {
+        @apply bg-gray-100 text-gray-900 flex flex-col min-h-screen;
+        /* subtle dot grid */
+        background-image: radial-gradient(theme('colors.gray.300') 1px, transparent 1px);
+        background-size: 22px 22px;
+    }
+    main {
+        @apply flex-1;
+    }
+}
+
+@layer components {
+
+    /* ---------- Layout ---------- */
+
+    .container-wide { @apply w-full max-w-6xl mx-auto px-4; }
+    .container-narrow { @apply w-full max-w-4xl mx-auto px-4; }
+
+    /* White content box */
+    .panel { @apply bg-white rounded-lg shadow-xl; }
+
+    /* "01. Section Title            // note" */
+    .section-title { @apply flex items-end justify-between border-b-2 border-gray-300 pb-2 mb-6; }
+    .section-title h2 { @apply text-2xl font-bold; }
+    .section-title .num { @apply font-mono text-lg text-blue-500 mr-2; }
+    .section-title .note { @apply hidden sm:inline font-mono text-sm text-gray-500; }
+
+    /* ---------- Header / footer ---------- */
+
+    .mobile-menu {
+        @apply bg-black overflow-hidden opacity-0;
+        max-height: 0;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    .mobile-menu.open { @apply opacity-100; max-height: 500px; }
+
+    .scroll-top {
+        @apply fixed bottom-10 right-10 z-30 bg-black text-white py-2 px-4 rounded-full hover:bg-gray-700 opacity-0 pointer-events-none transition-opacity duration-500;
+    }
+    .scroll-top.visible { @apply opacity-100 pointer-events-auto; }
+
+    /* ---------- Small pieces ---------- */
+
+    /* Markdown-style `inline code` highlight */
+    .hl { @apply font-mono text-[0.85em] bg-gray-200/80 text-gray-900 px-1.5 py-0.5 rounded-md whitespace-nowrap; }
+
+    .tag { @apply text-xs font-semibold px-2.5 py-0.5 rounded; }
+    .tag-blue { @apply bg-blue-200 text-blue-800; }
+    .tag-red { @apply bg-red-200 text-red-800; }
+    .tag-green { @apply bg-green-200 text-green-800; }
+    .tag-yellow { @apply bg-yellow-200 text-yellow-800; }
+    .tag-gray { @apply bg-gray-200 text-gray-800; }
+
+    .status { @apply inline-flex items-center gap-1.5 bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded; }
+    .status::before { content: ''; @apply h-1.5 w-1.5 rounded-full bg-green-500; }
+
+    .btn { @apply inline-block bg-blue-500 text-white font-bold py-1.5 px-3 rounded hover:bg-blue-700; }
+    /* Store buttons with brand logo (logos are black SVGs, inverted to white) */
+    .store-btn { @apply inline-flex items-center gap-2 text-white text-sm font-semibold py-2 px-3 rounded transition hover:brightness-125; }
+    .store-btn img { @apply h-5 w-5 invert; }
+    .store-steam { background-color: #171a21; }
+    .store-epic { background-color: #2a2a2a; }
+
+    .link-mono { @apply font-mono text-sm font-semibold text-blue-500 hover:underline; }
+    .back-link { @apply font-mono text-sm text-gray-500 hover:text-blue-500; }
+
+    .chip { @apply font-mono text-sm px-3 py-1 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-gray-900; }
+    .chip .count { @apply text-gray-400; }
+    .chip.active { @apply bg-black text-white border-black; }
+
+    /* ---------- Cards ---------- */
+
+    .project-card { @apply flex flex-col bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-2xl; }
+    .project-card:hover .see-more { @apply underline; }
+    .card-index { @apply absolute top-2 left-2 font-mono text-xs bg-black/70 text-white px-1.5 py-0.5 rounded; }
+    .card-path { @apply font-mono text-xs text-gray-400 mb-1 truncate; }
+    .see-more { @apply mt-auto font-mono text-sm font-semibold text-blue-500; }
+
+    .nav-card { @apply panel flex flex-col gap-1 p-4 transition duration-300 hover:-translate-y-0.5 hover:shadow-2xl; }
+
+    /* ---------- Long-form text (project pages, resume) ----------
+       Write plain HTML inside <article class="doc"> and it gets styled:
+       h2 = numbered section, h3 = sub-section, h4 = small heading,
+       <strong> = bold, <code> = inline code, <ul class="features"> = feature grid,
+       <div class="video"><iframe></div>, <figure class="code"><figcaption>file</figcaption><pre><code>…</code></pre></figure> */
+
+    .doc { counter-reset: section; }
+    .doc > :first-child { @apply mt-0; }
+
+    .doc h2 { @apply text-2xl font-bold mt-12 mb-4 pb-2 border-b-2 border-gray-300; counter-increment: section; }
+    .doc h2::before { content: counter(section, decimal-leading-zero) "."; @apply font-mono text-lg text-blue-500 mr-2; }
+    .doc h3 { @apply text-xl font-semibold mt-8 mb-2; }
+    .doc h4 { @apply text-lg font-bold mt-6 mb-1; }
+
+    .doc p { @apply text-gray-800 leading-relaxed mt-3; }
+    .doc strong { @apply font-semibold text-gray-900; }
+    .doc a:not(.btn) { @apply text-blue-600 font-semibold hover:underline; }
+    .doc :not(pre) > code { @apply hl; }
+
+    .doc ul, .doc ol { @apply pl-6 mt-3 space-y-1 text-gray-800; }
+    .doc ul { @apply list-disc; }
+    .doc ol { @apply list-decimal; }
+
+    .doc ul.features { @apply list-none pl-0 grid sm:grid-cols-2 gap-2 space-y-0; }
+    .doc ul.features li { @apply bg-gray-50 border border-gray-200 rounded-md px-3 py-2; }
+    .doc ul.features li::before { content: '▹'; @apply text-blue-500 mr-2; }
+
+    .doc .video { @apply mt-6; }
+    .doc .video iframe { @apply block w-full aspect-video rounded-lg shadow-lg; }
+
+    .doc img { @apply block max-w-full mx-auto mt-6 rounded-lg shadow-md; }
+    .doc figure:not(.code) figcaption { @apply mt-2 text-center font-mono text-xs text-gray-500; }
+
+    /* Resume entries: <div class="entry"><div class="entry-head"><h3>…</h3><span class="entry-date">…</span></div>…</div> */
+    .doc .entry { @apply mt-6; }
+    .doc .entry-head { @apply flex flex-wrap items-baseline justify-between gap-x-4; }
+    .doc .entry-head h3 { @apply mt-0 mb-0; }
+    .doc .entry-date { @apply font-mono text-sm text-gray-500; }
+    .doc .entry-role { @apply mt-0 text-gray-600; }
+    .doc .entry-tech { @apply font-mono text-sm font-normal text-gray-500 ml-1; }
+
+    .doc .skills { @apply grid sm:grid-cols-[auto,1fr] gap-x-6 gap-y-2 mt-4; }
+    .doc .skills dt { @apply font-semibold; }
+    .doc .skills dd { @apply text-gray-800; }
+
+    .contact-card { @apply flex items-center gap-3 border border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-md transition; }
+
+    .doc figure.code { @apply mt-6 rounded-lg shadow-lg overflow-hidden; }
+    .doc figure.code figcaption { @apply bg-gray-700 text-gray-200 font-mono text-xs px-4 py-2; }
+    .doc figure.code pre { @apply m-0; }
+    .doc figure.code code { @apply block text-xs md:text-sm overflow-x-auto; }
+
+    /* ---------- Game tier list (/tiers/ and the editor at /tiers/edit/) ---------- */
+
+    /* Dark board so cover art pops. --cover-w sets the cover size inside it. */
+    .tier-board { @apply bg-zinc-950 rounded-lg shadow-xl overflow-hidden; --cover-w: 3.75rem; }
+    @screen sm { .tier-board { --cover-w: 5rem; } }
+    @screen md { .tier-board { --cover-w: 5.5rem; } }
+
+    .tier-row { @apply flex border-b-2 border-zinc-950 last:border-b-0; }
+    .tier-label { @apply flex flex-col items-center justify-center shrink-0 w-16 sm:w-24 px-1 py-2 text-center text-black; }
+    .tier-letter { @apply text-2xl sm:text-4xl font-bold leading-none break-all; }
+    .tier-letter-long { @apply text-xs sm:text-base leading-tight break-words; }
+    .tier-caption { @apply mt-1.5 w-full font-mono text-[9px] sm:text-xs leading-tight opacity-75 hyphens-auto [overflow-wrap:anywhere]; }
+    .tier-items {
+        @apply flex flex-wrap content-start flex-1 gap-1.5 sm:gap-2 p-1.5 sm:p-2 bg-zinc-900;
+        min-height: calc(var(--cover-w) * 374 / 264 + 1rem);
+    }
+    .tier-items .cover { width: var(--cover-w); }
+
+    /* Game cover, IGDB's 264x374 shape. The name sits underneath and shows if the image is missing or fails. */
+    .cover { @apply relative block shrink-0 w-full overflow-hidden rounded bg-zinc-800 select-none; aspect-ratio: 264 / 374; }
+    .cover img { @apply absolute inset-0 w-full h-full object-cover; }
+    .cover-fallback { @apply absolute inset-0 flex items-center justify-center p-1.5 text-center font-mono text-[10px] leading-tight text-zinc-300 bg-gradient-to-b from-zinc-700 to-zinc-800 break-words; }
+    .cover-name { @apply absolute inset-x-0 bottom-0 px-1.5 pb-1 pt-5 text-left text-[10px] sm:text-xs font-semibold leading-tight text-white bg-gradient-to-t from-black/90 to-transparent opacity-0 transition-opacity; }
+    button.cover { @apply cursor-pointer outline-none transition duration-150 hover:-translate-y-0.5 hover:ring-2 hover:ring-white/80 focus-visible:ring-2 focus-visible:ring-blue-400; }
+    button.cover:hover .cover-name, button.cover:focus-visible .cover-name { @apply opacity-100; }
+
+    .tier-badge { @apply inline-flex items-center font-mono text-xs font-semibold px-2 py-0.5 rounded text-black; }
+
+    /* Popup (<dialog class="modal">) */
+    .modal { @apply p-0 m-auto w-[calc(100%-2rem)] max-w-xl rounded-lg shadow-2xl bg-white text-gray-900 overflow-hidden; }
+    .modal::backdrop { @apply bg-black/70 backdrop-blur-sm; }
+
+    /* Editor */
+    .field-label { @apply block font-mono text-xs text-gray-500 mb-1; }
+    .input { @apply block w-full rounded border border-gray-300 bg-white px-3 py-1.5 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20; }
+    .btn:disabled { @apply opacity-40 cursor-not-allowed hover:bg-blue-500; }
+    .btn-ghost { @apply inline-flex items-center justify-center gap-1.5 rounded border border-gray-300 bg-white px-3 py-1.5 font-mono text-sm text-gray-700 hover:border-gray-900 hover:text-gray-900 cursor-pointer; }
+    .btn-ghost:disabled { @apply opacity-40 cursor-not-allowed border-gray-300 text-gray-700; }
+    .btn-danger { @apply inline-flex items-center gap-1.5 font-mono text-sm text-red-600 hover:underline; }
+
+    .tier-row .tier-handle { @apply flex items-center px-2 text-zinc-600 bg-zinc-900 border-l border-zinc-950 cursor-grab hover:text-zinc-300 active:cursor-grabbing; }
+    button.tier-label { @apply relative hover:brightness-95; }
+    button.tier-label::after { content: '\f304'; font-family: 'Font Awesome 6 Free'; @apply absolute top-1 right-1.5 text-[10px] font-black opacity-0 transition-opacity; }
+    button.tier-label:hover::after { @apply opacity-50; }
+    .tier-items.editable:empty { @apply content-center; }
+    .tier-items.editable:empty::before { content: 'drop games here'; @apply mx-auto font-mono text-xs text-zinc-600; }
+    .cover-ghost { @apply opacity-30; }
+    .tier-ghost { @apply opacity-50; }
+
+    .unranked-tray { @apply rounded-lg border-2 border-dashed border-gray-300 bg-white p-3; --cover-w: 4rem; }
+    @screen sm { .unranked-tray { --cover-w: 5rem; } }
+    .unranked-tray .tier-items { @apply bg-transparent p-0; min-height: calc(var(--cover-w) * 374 / 264); }
+    .unranked-tray .tier-items.editable:empty::before { content: 'new games land here, drag them into a tier'; @apply text-gray-400; }
+
+    .result { @apply relative flex flex-col justify-start text-left disabled:cursor-default; }
+    .result:not(:disabled):hover .cover { @apply ring-2 ring-blue-500; }
+    .result .added { @apply absolute inset-0 flex items-center justify-center bg-black/60 text-white text-xl; }
+
+    .swatch { @apply h-7 w-7 rounded border-2 border-transparent cursor-pointer; }
+    .swatch.active { @apply border-gray-900; }
+
+    .toast { @apply fixed bottom-6 left-1/2 z-50 -translate-x-1/2 max-w-[calc(100%-2rem)] rounded bg-black px-4 py-2 font-mono text-sm text-white shadow-xl opacity-0 pointer-events-none transition-opacity duration-300; }
+    .toast.visible { @apply opacity-100; }
+    .toast.error { @apply bg-red-700; }
+}

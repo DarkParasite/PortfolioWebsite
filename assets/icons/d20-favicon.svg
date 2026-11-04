@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- d20 favicon. Hexagon outline, 10 visible faces lit from the top left, "20" on the front face. -->
+  <defs>
+    <linearGradient id="front" x1="0.2" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="lit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#bfdbfe"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e40af"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#dbeafe" stroke-width="1" stroke-linejoin="round">
+    <polygon points="32,1 5.2,16.5 32,12" fill="url(#lit)"/>          <!-- top left -->
+    <polygon points="32,1 58.8,16.5 32,12" fill="#3b82f6"/>           <!-- top right -->
+    <polygon points="5.2,16.5 32,12 15.5,42" fill="#60a5fa"/>         <!-- left -->
+    <polygon points="58.8,16.5 32,12 48.5,42" fill="#1d4ed8"/>        <!-- right -->
+    <polygon points="5.2,16.5 5.2,47.5 15.5,42" fill="#2563eb"/>      <!-- far left -->
+    <polygon points="58.8,16.5 58.8,47.5 48.5,42" fill="url(#shade)"/><!-- far right -->
+    <polygon points="5.2,47.5 32,63 15.5,42" fill="#1e40af"/>         <!-- bottom left -->
+    <polygon points="15.5,42 48.5,42 32,63" fill="#1e3a8a"/>          <!-- bottom -->
+    <polygon points="58.8,47.5 32,63 48.5,42" fill="#172554"/>        <!-- bottom right -->
+    <polygon points="32,12 15.5,42 48.5,42" fill="url(#front)"/>      <!-- front -->
+  </g>
+  <!-- glint -->
+  <polygon points="29.5,4.6 12,14.8 18.5,14.4" fill="#fff" opacity="0.55"/>
+  <polygon points="32,1 58.8,16.5 58.8,47.5 32,63 5.2,47.5 5.2,16.5" fill="none" stroke="#0f172a" stroke-width="1.4" stroke-linejoin="round"/>
+  <g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22.6 27.6c0-3 1.9-4.5 4-4.5s3.9 1.4 3.9 3.7c0 3-4.2 5.3-7.9 10h8.1"/>
+    <ellipse cx="37.6" cy="30" rx="3.5" ry="6.8"/>
+  </g>
+</svg>
